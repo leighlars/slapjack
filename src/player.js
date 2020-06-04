@@ -1,5 +1,5 @@
 class Player {
-  constructor(id, hand) {
+  constructor(id) {
     this.id = id;
     this.wins = 0;
     this.hand = [];
@@ -11,8 +11,13 @@ class Player {
   }
 
   saveWinsToStorage() {
+   localStorage.setItem(`player-${this.id}-wins`, JSON.stringify(this.wins));
+ }
 
-  }
+ retrieveWinsFromStorage() {
+   this.wins = JSON.parse(localStorage.getItem(`player-${this.id}-wins`)) || [];
+   // updatePlayerSidebar(this);
+ }
 
 
 }

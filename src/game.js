@@ -1,9 +1,11 @@
 class Game {
   constructor() {
-    // this.player1 = new Player(1);
-    // this.player2 = new Player(2);
+    this.player1 = new Player(1);
+    this.player2 = new Player(2);
     this.deck = this.compileDeck();
     this.centralPile = [];
+    this.currentPlayer = true;
+
   }
 
   compileDeck() {
@@ -22,12 +24,19 @@ class Game {
     }
   }
 
-  dealToPlayers() {
-
+  deal() {
+    for (var i = 0; i < this.deck.length -1; i++) {
+      if ([i] % 2 === 0) {
+        this.player1.hand.push(this.deck[i]);
+      } else {
+        this.player2.hand.push(this.deck[i]);
+      }
+    }
+    this.centralPile.push(this.deck[this.deck.length - 1]);
   }
 
   playerTurn() {
-
+    this.currentPlayer = !this.currentPlayer;
   }
 
   playCard() {
