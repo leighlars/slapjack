@@ -7,6 +7,7 @@ Mod 1 Solo Final Project
 ### Project Links
 - [Repo](https://github.com/leighlars/slapjack)
 - [Deployed Page](https://leighlars.github.io/slapjack/)
+- [Project Spec](https://frontend.turing.io/projects/module-1/slapjack.html)
 
 ## Set-up
 - Fork the repo and clone down into terminal
