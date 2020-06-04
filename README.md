@@ -3,7 +3,7 @@ Mod 1 Solo Final Project
 ### Developer
 - [Leigh Larson](https://github.com/leighlars)
 ### Project Manager
-- [Leta Keane](https://github.com/cbdallavalle)
+- [Leta Keane](https://github.com/letakeane)
 ### Project Links
 - [Repo](https://github.com/leighlars/slapjack)
 - [Deployed Page](https://leighlars.github.io/slapjack/)
