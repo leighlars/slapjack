@@ -1,7 +1,7 @@
 * {
   border: none;
   box-sizing: border-box;
-  font-family: "Montserrat Alternates";
+  font-family: "Muli";
   color: #FFF;
   text-shadow: -1px 0 black, 0 2px black, 2px 0 black, 0 -1px black;
 }
@@ -67,6 +67,7 @@ span {
 .player-hand,
 .deck {
   display: flex;
+  align-content: center;
   background-image: url("assets/back.png");
   background-position:center;
   background-repeat: no-repeat;
@@ -81,7 +82,7 @@ span {
 .deck {
   box-shadow: -10px 0 20px #b31cb5,
     10px 0 20px #b31cb5;
-    margin: 0;
+    margin-bottom: 55px;
 }
 
 .p2-hand {
