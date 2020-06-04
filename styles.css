@@ -1,1 +1,52 @@
+* {
+  border: none;
+  box-sizing: border-box;
+  font-family: "Lobster";
+  color: #C94C4C;
+  text-shadow: -1px 0 black, 0 2px black, 2px 0 black, 0 -1px black;
+}
 
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background: #FFFACD;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 120px;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  padding: 50px auto;
+  height: 90vh;
+  width: 100%;
+}
+
+.card-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: black;
+  padding: 20px auto;
+  height: 550px;
+  width: 100%;
+}
+
+.player-hand {
+  background: url()
+}
