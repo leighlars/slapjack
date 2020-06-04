@@ -6,7 +6,7 @@ Mod 1 Solo Final Project
 - [Leta Keane](https://github.com/cbdallavalle)
 ### Project Links
 - [Repo](https://github.com/leighlars/slapjack)
-- [Deployed Page](https://leighlars.github.io/intention-timer/)
+- [Deployed Page](https://leighlars.github.io/slapjack/)
 
 ## Set-up
 - Fork the repo and clone down into terminal
