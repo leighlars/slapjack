@@ -2,7 +2,14 @@ class Game {
   constructor() {
     // this.player1 = new Player(1);
     // this.player2 = new Player(2);
-    this.deck = [1, 2, 3, 4, 5, 6];
+    this.deck = this.compileDeck();
+  }
+
+  compileDeck() {
+    var suit = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+    var wildCard = 14;
+    var wholeDeck = [...suit, ...suit, ...suit, ...suit, wildCard];
+    return wholeDeck;
   }
 
   shuffleDeck() {
@@ -20,7 +27,6 @@ class Game {
 // A Game should include:
 // // Two Player instances
 // // An array of all the possible cards
-// A way to shuffle the deck-- func called shuffle that randomizes the order of elems in the array?
 // A way to keep track of the central pile of cards the players will add to
 // A way to deal the deck out to the players
 // A way to keep track of which player’s turn it currently is
