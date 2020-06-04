@@ -1,8 +1,8 @@
 * {
   border: none;
   box-sizing: border-box;
-  font-family: "Lobster";
-  color: #C94C4C;
+  font-family: "Montserrat Alternates";
+  color: #FFF;
   text-shadow: -1px 0 black, 0 2px black, 2px 0 black, 0 -1px black;
 }
 
@@ -15,7 +15,8 @@ html, body {
 body {
   display: flex;
   flex-direction: column;
-  background: #FFFACD;
+  background: rgb(179,28,181);
+  background: linear-gradient(119deg, rgba(179,28,181,1) 10%, rgba(179,167,32,1) 50%, rgba(11,166,231,1) 86%);
 }
 
 h1 {
@@ -40,16 +41,16 @@ header {
 span {
   display: flex;
   justify-content: center;
+  margin-top: 10px;
   font-size: 30px;
   width: 100%;
 }
 
-
-.card-section {
+.gameplay {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-evenly;
-  padding: 20px auto;
   height: 550px;
   width: 100%;
 }
@@ -58,30 +59,32 @@ span {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  align-items: center;
-  padding: 10px;
-  height: 400px;
+  align-items:stretch;
+  height: 450px;
   width: 300px;
 }
 
-.player-hand {
+.player-hand,
+.deck {
   display: flex;
-  background: url("assets/back.png");
-  border-radius: 4px;
-  box-shadow: -10px 0 20px #C94C4C,
-    10px 0 20px #C94C4C;
-  height: 390px;
+  background-image: url("assets/back.png");
+  background-position:center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 6px;
+  box-shadow: -10px 0 20px #0b6fe7,
+    10px 0 20px #0b6fe7;
+  height: 380px;
   width: 290px;
 }
 
-.p2-hand {
-  box-shadow: -10px 0 20px purple,
-    10px 0 20px purple;
+.deck {
+  box-shadow: -10px 0 20px #b31cb5,
+    10px 0 20px #b31cb5;
+    margin: 0;
 }
 
-span {
-  display: flex;
-  justify-content: center;
-  font-size: 30px;
-  width: 100%;
+.p2-hand {
+  box-shadow: -10px 0 20px #cdcb08,
+    10px 0 20px #cdcb08;
 }
