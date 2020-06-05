@@ -38,7 +38,7 @@ header {
   height: 120px;
 }
 
-span {
+article {
   display: flex;
   justify-content: center;
   margin-top: 10px;
