@@ -81,11 +81,13 @@ class Game {
     }
   }
 
+
   gameWinSlap(winner) {
     if (topCard === 11 && player with cards.slapPile()) {
       var winningPlayer = this[`player${winner}`];
       this.player${id}.this.wins.push(game);
       changeHeader("win");
+      setTimeout(changeHeader, 500)
       resetGame();
     }
     if (topCard === 11 && player with no cards .slapPile()) {

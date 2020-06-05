@@ -23,11 +23,9 @@ game.shuffleDeck(game.deck);
 game.deal();
 
 
-
-
 function displayTopCard(playedCard) {
   var topCard = document.querySelector(".central-pile");
-
+  topCard.
 }
 
 function changeHeader(condition, winningPlayer) {
