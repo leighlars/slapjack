@@ -72,12 +72,14 @@ class Game {
     }
   }
 
-  gameWinSlap() {
+  gameWinSlap(winner) {
     if (topCard === 11 && player with cards.slapPile()) {
+      var winningPlayer = this[`player${winner}`];
       this.player${id}.this.wins.push(game);
       resetGame();
     }
     if (topCard === 11 && player with no cards .slapPile()) {
+      
     }
   }
 

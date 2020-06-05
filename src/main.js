@@ -31,6 +31,7 @@ function changeHeader(condition, winningPlayer) {
   var header = document.querySelector("header");
   if (condition === "win") {
       header.innerText = `Player ${winningPlayer.id} wins!`;
+      updatePlayerWinsText(winningPlayer);
   }
   else if (condition === "slapjack") {
       header.innerText = `SLAPJACK! Player ${winningPlayer.id} takes the pile!`;
@@ -47,7 +48,7 @@ function changeHeader(condition, winningPlayer) {
 }
 
 
-//function updatePlayerWinsText() {
-// var playerWins = document.querySelector(".p${winningPlayer.id}-text");
-// playerWins.innerText = `${winningPlayer.wins.length} wins`;
-// }
+function updatePlayerWinsText(winningPlayer) {
+  var playerWins = document.querySelector(`.p${winningPlayer.id}-text`);
+  playerWins.innerText = `${winningPlayer.wins.length} wins`;
+}
