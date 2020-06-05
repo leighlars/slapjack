@@ -25,6 +25,7 @@ class Game {
   }
 
   deal() {
+    this.deck.shuffleDeck(this.deck);
     for (var i = 0; i < this.deck.length -1; i++) {
       if ([i] % 2 === 0) {
         this.player1.hand.push(this.deck[i]);

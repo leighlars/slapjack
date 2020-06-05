@@ -1,6 +1,7 @@
 var game = new Game();
 
-// window.onload = player.retrieveWinsFromStorage();
+window.onload = game.deal();
+window.onload = player.saveWinsToStorage();
 document.addEventListener("keydown", keyHandler);
 
 function keyHandler() {
@@ -17,8 +18,6 @@ function keyHandler() {
     game.player2.slapPile();
   }
 }
-
-game.shuffleDeck(game.deck);
 
 game.deal();
 
