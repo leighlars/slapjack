@@ -7,6 +7,8 @@ class Game {
     this.currentPlayer = true;
   }
 
+// general play
+
   compileDeck() {
     var suit = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
     var wholeDeck = [...suit, ...suit, ...suit, ...suit];
@@ -43,6 +45,8 @@ class Game {
     this.playerTurn();
   }
 
+// check slap conditions
+
   winTurn() {
     this.currentPlayer.hand.push(this.centralPile);
     this.shuffleDeck(this.currentPlayer.hand);
@@ -54,14 +58,19 @@ class Game {
     var thirdCard = this.centralPile[this.centralPile.length - 3];
     if (topCard == 11 || topCard == secondCard || topCard == thirdCard) {
       this.winTurn();
+
+      changeHeader("slapjack", "sandwich", "double", );
     } else {
-      var lostCard = this.currentPlayer.hand.unshift();
+      var lostCard = this[player${}.hand].unshift();
+      changeHeader("badslap");
       // other player's hand.push(lostCard);
       // there will be issues with winTurn and slapPile bc it's not based on keyboard event
     }
   }
 
-  checkWinConditions() {
+// check win conditions
+
+  checkEmptyHand() {
     if (this.player1.hand.length === 0) {
       this.player2.playCard();
       this.playerTurn();
@@ -76,6 +85,7 @@ class Game {
     if (topCard === 11 && player with cards.slapPile()) {
       var winningPlayer = this[`player${winner}`];
       this.player${id}.this.wins.push(game);
+      changeHeader("win");
       resetGame();
     }
     if (topCard === 11 && player with no cards .slapPile()) {
@@ -92,17 +102,11 @@ class Game {
 //  if topCard != 11 and empty card player slaps, other player wins
 
 
-
-  // updatePlayerWins() {
-  //   this.player${id}.wins.push(game);
-  // }
-
-  // resetGame() {
-  //   this.player1.hand.length === 0;
-  //   this.player2.hand.length === 0;
-  //   this.deck
-  //   this.shuffleDeck();
-  //   deal();
-  // }
+  resetGame() {
+    this.player1.hand.length === 0;
+    this.player2.hand.length === 0;
+    this.shuffleDeck(this.deck);
+    deal();
+  }
 
 }

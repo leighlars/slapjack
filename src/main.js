@@ -1,5 +1,6 @@
 var game = new Game();
 
+// window.onload = player.retrieveWinsFromStorage();
 document.addEventListener("keydown", keyHandler);
 
 function keyHandler() {
@@ -21,11 +22,13 @@ game.shuffleDeck(game.deck);
 
 game.deal();
 
-//function displayTopCard() {
-//var topCard = document.querySelector(".deck");
-//
-// }
 
+
+
+function displayTopCard(playedCard) {
+  var topCard = document.querySelector(".central-pile");
+
+}
 
 function changeHeader(condition, winningPlayer) {
   var header = document.querySelector("header");
@@ -46,7 +49,6 @@ function changeHeader(condition, winningPlayer) {
       header.innerText = `BAD SLAP! Player ${winningPlayer.id} forfeits a card to Player ${otherPlayer}!`;
   }
 }
-
 
 function updatePlayerWinsText(winningPlayer) {
   var playerWins = document.querySelector(`.p${winningPlayer.id}-text`);
