@@ -72,7 +72,7 @@ class Game {
     var players = [this.player1, this.player2];
     var losingPlayer = players.find(player => player.hand.length === 0);
     var winningPlayer = players.find(player => player.hand.length != 0);
-    winningPlayer.playedCard();
+    winningPlayer.playCard();
     this.playerTurn();
   }
 
