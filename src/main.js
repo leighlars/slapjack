@@ -1,6 +1,6 @@
 var game = new Game();
 
-game.shuffleDeck();
+game.shuffleDeck(game.deck);
 
 game.deal();
 

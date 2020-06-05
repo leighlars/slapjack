@@ -15,12 +15,12 @@ class Game {
     return wholeDeck;
   }
 
-  shuffleDeck() {
-    for (var i = this.deck.length -1; i > 0; i--) {
+  shuffleDeck(cardPile) {
+    for (var i = cardPile.length -1; i > 0; i--) {
       var randomIndex = Math.floor(Math.random() * i)
-      var temporary = this.deck[i]
-      this.deck[i] = this.deck[randomIndex];
-      this.deck[randomIndex] = temporary;
+      var temporary = cardPile[i]
+      cardPile[i] = cardPile[randomIndex];
+      cardPile[randomIndex] = temporary;
     }
   }
 
@@ -40,12 +40,21 @@ class Game {
   }
 
   playCard() {
-
+    var playedCard = this.currentPlayer.hand.pop();
+    this.centralPile.push(playedCard);
   }
 
   slapPile() {
-
+    var topCard = this.centralPile[this.centralPile.length - 1];
+    if (topCard == 11) {
+      this.currentPlayer.hand.push(this.centralPile);
+      this.shuffleDeck(this.currentPlayer.hand);
+    }
+    
   }
+
+
+
 
   updatePlayerWins() {
 
