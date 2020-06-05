@@ -59,14 +59,15 @@ class Game {
     if (topCard == 11 || topCard == secondCard || topCard == thirdCard) {
       this.winTurn();
       // 3 if statements ?
-      changeHeader("slapjack", "sandwich", "double", );
+      changeHeader("slapjack", "sandwich", "double");
     } else {
-      var lostCard = this[player${}.hand].unshift();
+      var lostCard = this[player${id}.hand].unshift();
       changeHeader("badslap");
       // other player's hand.push(lostCard);
       // there will be issues with winTurn and slapPile bc it's not based on keyboard event
     }
   }
+
 
 // check win conditions
   checkEmptyHand() {
@@ -92,7 +93,7 @@ class Game {
     if (topCard === 11 && player with no cards .slapPile()) {
       this.winTurn();
     }
-    if (topCard != && player with no cards .slapPile()) {
+    if (topCard != 11 && player with no cards .slapPile()) {
       other player wins.
     }
   }
@@ -104,7 +105,6 @@ class Game {
   resetGame() {
     this.player1.hand.length === 0;
     this.player2.hand.length === 0;
-    this.shuffleDeck(this.deck);
     deal();
   }
 
