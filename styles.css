@@ -38,7 +38,7 @@ header {
   height: 120px;
 }
 
-article {
+p {
   display: flex;
   justify-content: center;
   margin-top: 10px;
@@ -60,7 +60,7 @@ article {
   flex-direction: column;
   justify-content: space-evenly;
   align-items:stretch;
-  height: 450px;
+  height: 460px;
   width: 300px;
 }
 
@@ -82,7 +82,18 @@ article {
 .deck {
   box-shadow: -10px 0 20px #b31cb5,
     10px 0 20px #b31cb5;
-    margin-bottom: 55px;
+    margin-bottom: 80px;
+    height: 375px;
+}
+
+.deck.p1 {
+  box-shadow: -10px 0 20px #0b6fe7,
+    10px 0 20px #0b6fe7;
+}
+
+.deck.p2{
+  box-shadow: -10px 0 20px #cdcb08,
+    10px 0 20px #cdcb08;
 }
 
 .p2-hand {
