@@ -30,6 +30,16 @@ My estimated schedule is as follows:
 
 ## Gameplay
 
+**Player 1’s keyboard controls**
+- q to deal a card
+- f to slap
+
+**Player 2’s keyboard controls**
+- p to deal a card
+- j to slap
+
+**Instructions**
+
 - Players alternate turns playing cards face-up into the central pile (ex a player can’t deal twice in a row)
 - Any player can slap at any time, with several outcomes:
 - **The entire central pile is added to the player’s hand, and their hand is shuffled automatically when:**
