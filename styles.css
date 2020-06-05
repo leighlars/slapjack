@@ -25,9 +25,10 @@ h1 {
 
 main {
   display: flex;
-  flex-direction: column;
-  padding: 50px auto;
-  height: 90vh;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  margin: auto;
   width: 100%;
 }
 
@@ -38,21 +39,12 @@ header {
   height: 120px;
 }
 
-span {
+p {
   display: flex;
   justify-content: center;
   margin-top: 10px;
-  font-size: 30px;
-  width: 100%;
-}
-
-.gameplay {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-evenly;
-  height: 550px;
-  width: 100%;
+  font-size: 20px;
+  width: 90%;
 }
 
 .player-section {
@@ -61,11 +53,10 @@ span {
   justify-content: space-evenly;
   align-items:stretch;
   height: 450px;
-  width: 300px;
+  width: 280px;
 }
 
-.player-hand,
-.deck {
+.cards {
   display: flex;
   align-content: center;
   background-image: url("assets/back.png");
@@ -75,17 +66,24 @@ span {
   border-radius: 6px;
   box-shadow: -10px 0 20px #0b6fe7,
     10px 0 20px #0b6fe7;
-  height: 380px;
-  width: 290px;
+  height: 370px;
+  width: 260px;
 }
 
-.deck {
+.p2-hand,
+.center-pile.p2 {
+  box-shadow: -10px 0 20px #cdcb08,
+  10px 0 20px #cdcb08;
+}
+
+.center-pile {
   box-shadow: -10px 0 20px #b31cb5,
     10px 0 20px #b31cb5;
-    margin-bottom: 55px;
+    margin-bottom: 65px;
+    height: 375px;
 }
 
-.p2-hand {
-  box-shadow: -10px 0 20px #cdcb08,
-    10px 0 20px #cdcb08;
+.center-pile.p1 {
+  box-shadow: -10px 0 20px #0b6fe7,
+    10px 0 20px #0b6fe7;
 }
