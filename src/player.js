@@ -16,7 +16,7 @@ class Player {
 
  retrieveWinsFromStorage() {
    this.wins = JSON.parse(localStorage.getItem(`player-${this.id}-wins`)) || [];
-   // updatePlayerSidebar(this);
+   // updatePlayerWinsText(this);
  }
 
 

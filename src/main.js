@@ -17,14 +17,13 @@ function keyHandler() {
   }
 }
 
-
 game.shuffleDeck(game.deck);
 
 game.deal();
 
 //function displayTopCard() {
 //var topCard = document.querySelector(".deck");
-// 
+//
 // }
 
 // function changeHeader() {
