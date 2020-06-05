@@ -25,10 +25,10 @@ game.deal();
 
 function changeTopCard() {
   var topCard = document.querySelector(".central-pile");
-  topCard.classList.remove("hidden");
+  // topCard.classList.remove("hidden");
   topCard.classList.add(`${this.player.id}`);
   // add border of player's color
-  // 
+  //
 }
 
 function displayTopCard(playedCard) {
