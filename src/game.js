@@ -40,7 +40,7 @@ class Game {
   playCard() {
     var playedCard = this.currentPlayer ? this.player1.hand.pop() : this.player2.hand.pop();
     this.centralPile.push(playedCard);
-    playerTurn();
+    this.playerTurn();
   }
 
   winTurn() {
@@ -59,33 +59,47 @@ class Game {
       // other player's hand.push(lostCard);
       // there will be issues with winTurn and slapPile bc it's not based on keyboard event
     }
+  }
 
-    if (any player.hand.length === 0) {
-      other player can deal consecutively now (disable alternating turns)
-      if (current player slaps 11, current player wins);
-      if current player !slap 11, other player
-      if (that player deals all cards and none are 11, this.currentPlayer.hand.push(centralPile)
+  checkWinConditions() {
+    if (this.player1.hand.length === 0) {
+      this.player2.playCard();
+      this.playerTurn();
+    }
+    if (this.player2.hand.length === 0) {
+      this.player1.playCard();
+      this.playerTurn();
     }
   }
 
-// If the player with cards left deals all their cards into the center without revealing a Jack,
-// the central pile returns to that player’s hand, is shuffled, and the player must continue to deal until a Jack is revealed
-// When a Jack is revealed, the player who is out of cards can slap it.
-// The central pile is then their new hand, the game continues as normal.
-// If however, the player who is out of cards slaps something that is not a Jack,
-// or if the player who still has cards slaps the Jack first, then the player who is out of cards loses and the game is over!
-// Doubles and Sandwiches are not valid when one player is completely out of cards - in this case, only a Jack can save them!
-// The only way the player who still has cards can win is by slapping the Jack before the player without cards left does
-
-
-
-
-  updatePlayerWins() {
-
+  gameWinSlap() {
+    if (topCard === 11 && player with cards.slapPile()) {
+      this.player${id}.this.wins.push(game);
+      resetGame();
+    }
+    if (topCard === 11 && player with no cards .slapPile()) {
+    }
   }
 
-  resetGame() {
-    // this.shuffleDeck();
-  }
+  // if (any player.hand.length === 0) {
+  //   other player can deal consecutively now (disable alternating turns)
+  //   if (that player slaps 11 first, that player.updatePlayerWins()),
+  //  if (player w cards deals all cards and topCard != 11, that player winTurn() and deals until topCard = 11)
+  // if player with no cards slaps 11 first, that player.winsTurn() and game is back to normal (enable alternate turns));
+//  if topCard != 11 and empty card player slaps, other player wins
+
+
+
+  // updatePlayerWins() {
+  //   this.player${id}.wins.push(game);
+  // }
+
+  // resetGame() {
+  //   this.player1.hand.length === 0;
+  //   this.player2.hand.length === 0;
+  //   this.deck
+  //   this.shuffleDeck();
+  //   deal();
+  // }
 
 }
