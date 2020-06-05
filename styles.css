@@ -26,9 +26,10 @@ h1 {
 main {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   margin: auto;
+  width: 100%;
 }
 
 header {
@@ -46,11 +47,6 @@ p {
   width: 90%;
 }
 
-.gameplay {
-  height: 550px;
-  width: 85%;
-}
-
 .player-section {
   display: flex;
   flex-direction: column;
@@ -60,8 +56,7 @@ p {
   width: 280px;
 }
 
-.player-hand,
-.deck {
+.cards {
   display: flex;
   align-content: center;
   background-image: url("assets/back.png");
@@ -75,19 +70,20 @@ p {
   width: 260px;
 }
 
-.p2-hand, .deck.p2 {
+.p2-hand,
+.center-pile.p2 {
   box-shadow: -10px 0 20px #cdcb08,
   10px 0 20px #cdcb08;
 }
 
-.deck {
+.center-pile {
   box-shadow: -10px 0 20px #b31cb5,
     10px 0 20px #b31cb5;
-    margin-bottom: 60px;
+    margin-bottom: 65px;
     height: 375px;
 }
 
-.deck.p1 {
+.center-pile.p1 {
   box-shadow: -10px 0 20px #0b6fe7,
     10px 0 20px #0b6fe7;
 }
