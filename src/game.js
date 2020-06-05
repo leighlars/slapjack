@@ -44,7 +44,7 @@ class Game {
     playerTurn();
   }
 
-  function winTurn() {
+  winTurn() {
     this.currentPlayer.hand.push(this.centralPile);
     this.shuffleDeck(this.currentPlayer.hand);
   }
@@ -58,6 +58,7 @@ class Game {
     } else {
       var lostCard = this.currentPlayer.hand.unshift();
       // other player's hand.push(lostCard);
+      // there will be issues with winTurn and slapPile bc it's not based on keyboard event
     }
   }
 
