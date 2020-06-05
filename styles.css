@@ -1,1 +1,91 @@
+* {
+  border: none;
+  box-sizing: border-box;
+  font-family: "Muli";
+  color: #FFF;
+  text-shadow: -1px 0 black, 0 2px black, 2px 0 black, 0 -1px black;
+}
 
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background: rgb(179,28,181);
+  background: linear-gradient(119deg, rgba(179,28,181,1) 10%, rgba(179,167,32,1) 50%, rgba(11,166,231,1) 86%);
+}
+
+h1 {
+  font-size: 50px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  padding: 50px auto;
+  height: 90vh;
+  width: 100%;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 120px;
+}
+
+span {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  font-size: 30px;
+  width: 100%;
+}
+
+.gameplay {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 550px;
+  width: 100%;
+}
+
+.player-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items:stretch;
+  height: 450px;
+  width: 300px;
+}
+
+.player-hand,
+.deck {
+  display: flex;
+  align-content: center;
+  background-image: url("assets/back.png");
+  background-position:center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 6px;
+  box-shadow: -10px 0 20px #0b6fe7,
+    10px 0 20px #0b6fe7;
+  height: 380px;
+  width: 290px;
+}
+
+.deck {
+  box-shadow: -10px 0 20px #b31cb5,
+    10px 0 20px #b31cb5;
+    margin-bottom: 55px;
+}
+
+.p2-hand {
+  box-shadow: -10px 0 20px #cdcb08,
+    10px 0 20px #cdcb08;
+}

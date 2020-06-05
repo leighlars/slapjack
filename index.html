@@ -1,18 +1,33 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link href="https://fonts.googleapis.com/css2?family=Muli:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssnormalize/cssnormalize-min.css">
     <link rel="stylesheet" href="./styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Slapjack</title>
   </head>
   <body>
-    
-
-
-
-
-
+    <header>
+      <h1>Slapjack!</h1>
+    </header>
+    <main>
+      <section class="gameplay">
+        <section class="player-section">
+          <div class="player-hand p1-hand">
+          </div>
+          <span class="p1-text">0 Wins</span>
+        </section>
+        <div class="deck">
+        <!-- <img src="./assets/back.png" class="player-card" id="icon" alt="Image of back design of top card in player hand"> -->
+        </div>
+        <section class="player-section">
+          <div class="player-hand p2-hand">
+          </div>
+          <span class="p1-text">0 Wins</span>
+        </section>
+      </section>
+    </main>
     <script src="./src/game.js"></script>
     <script src="./src/player.js"></script>
     <script src="./src/main.js"></script>
