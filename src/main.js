@@ -1,7 +1,7 @@
 var game = new Game();
 
 window.onload = game.deal();
-window.onload = player.saveWinsToStorage();
+window.onload = player.retrieveWinsFromStorage();
 document.addEventListener("keydown", keyHandler);
 
 function keyHandler() {
@@ -18,9 +18,6 @@ function keyHandler() {
     game.player2.slapPile();
   }
 }
-
-game.deal();
-
 
 function changeTopCard() {
   var topCard = document.querySelector(".central-pile");
