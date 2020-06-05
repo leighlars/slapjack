@@ -24,7 +24,7 @@ function changeTopCard(playedCard) {
   topCard.classList.remove("hidden");
   // if (this.player2.playCard()) {
     topCard.classList.add("p2");
-    // topCard.style.background = image of index
+    topCard.style.background = images.find(image => image === playedCard);
     // still need to figure out how to connect each img with array[i]
   }
 
