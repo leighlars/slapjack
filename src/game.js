@@ -32,7 +32,6 @@ class Game {
         this.player2.hand.push(this.deck[i]);
       }
     }
-    this.centralPile.push(this.deck[this.deck.length - 1]);
   }
 
   playerTurn() {
@@ -58,7 +57,7 @@ class Game {
     var thirdCard = this.centralPile[this.centralPile.length - 3];
     if (topCard == 11 || topCard == secondCard || topCard == thirdCard) {
       this.winTurn();
-
+      // 3 if statements ?
       changeHeader("slapjack", "sandwich", "double", );
     } else {
       var lostCard = this[player${}.hand].unshift();
@@ -69,7 +68,6 @@ class Game {
   }
 
 // check win conditions
-
   checkEmptyHand() {
     if (this.player1.hand.length === 0) {
       this.player2.playCard();
@@ -98,11 +96,9 @@ class Game {
     }
   }
 
-
 //  if (player w cards deals all cards and topCard != 11, that player winTurn() and deals until topCard = 11)
 // if player with no cards slaps 11 first, that player.winTurn() and game is back to normal (enable alternate turns));
 //  if topCard != 11 and empty card player slaps, other player wins
-
 
   resetGame() {
     this.player1.hand.length === 0;
