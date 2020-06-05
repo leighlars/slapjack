@@ -15,7 +15,7 @@ class Game {
     return wholeDeck;
   }
 
-  shuffleDeck(cardPile) {
+  shuffleCards(cardPile) {
     for (var i = cardPile.length -1; i > 0; i--) {
       var randomIndex = Math.floor(Math.random() * i)
       var temporary = cardPile[i]
@@ -25,6 +25,7 @@ class Game {
   }
 
   deal() {
+    this.deck.shuffleCards(this.deck);
     for (var i = 0; i < this.deck.length -1; i++) {
       if ([i] % 2 === 0) {
         this.player1.hand.push(this.deck[i]);
@@ -32,7 +33,6 @@ class Game {
         this.player2.hand.push(this.deck[i]);
       }
     }
-    this.centralPile.push(this.deck[this.deck.length - 1]);
   }
 
   playerTurn() {
@@ -58,18 +58,18 @@ class Game {
     var thirdCard = this.centralPile[this.centralPile.length - 3];
     if (topCard == 11 || topCard == secondCard || topCard == thirdCard) {
       this.winTurn();
-
-      changeHeader("slapjack", "sandwich", "double", );
+      // 3 if statements ?
+      changeHeader("slapjack", "sandwich", "double");
     } else {
-      var lostCard = this[player${}.hand].unshift();
+      var lostCard = this[player${id}.hand].unshift();
       changeHeader("badslap");
       // other player's hand.push(lostCard);
       // there will be issues with winTurn and slapPile bc it's not based on keyboard event
     }
   }
 
-// check win conditions
 
+// check win conditions
   checkEmptyHand() {
     if (this.player1.hand.length === 0) {
       this.player2.playCard();
@@ -81,33 +81,30 @@ class Game {
     }
   }
 
-
   gameWinSlap(winner) {
     if (topCard === 11 && player with cards.slapPile()) {
       var winningPlayer = this[`player${winner}`];
-      this.player${id}.this.wins.push(game);
+      winningPlayer.wins.push(game);
+      winningPlayer.saveWinsToStorage();
       changeHeader("win");
-      setTimeout(changeHeader, 500)
+      setTimeout(changeHeader, 500);
       resetGame();
     }
     if (topCard === 11 && player with no cards .slapPile()) {
       this.winTurn();
     }
-    if (topCard != && player with no cards .slapPile()) {
+    if (topCard != 11 && player with no cards .slapPile()) {
       other player wins.
     }
   }
-
 
 //  if (player w cards deals all cards and topCard != 11, that player winTurn() and deals until topCard = 11)
 // if player with no cards slaps 11 first, that player.winTurn() and game is back to normal (enable alternate turns));
 //  if topCard != 11 and empty card player slaps, other player wins
 
-
   resetGame() {
     this.player1.hand.length === 0;
     this.player2.hand.length === 0;
-    this.shuffleDeck(this.deck);
     deal();
   }
 

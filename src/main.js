@@ -1,6 +1,7 @@
 var game = new Game();
 
-// window.onload = player.retrieveWinsFromStorage();
+window.onload = game.deal();
+window.onload = player.retrieveWinsFromStorage();
 document.addEventListener("keydown", keyHandler);
 
 function keyHandler() {
@@ -18,23 +19,13 @@ function keyHandler() {
   }
 }
 
-game.shuffleDeck(game.deck);
-
-game.deal();
-
-
 function changeTopCard() {
   var topCard = document.querySelector(".central-pile");
-  // topCard.classList.remove("hidden");
-  topCard.classList.add(`${this.player.id}`);
-  // add border of player's color
-  //
-}
-
-function displayTopCard(playedCard) {
-  var topCard = document.querySelector(".central-pile");
-  topCard.
-}
+  topCard.classList.remove("hidden");
+  // if (this.player2.playCard()) {
+    topCard.classList.add("p2");
+    // topCard.style.background = image of index
+  }
 
 function changeHeader(condition, winningPlayer) {
   var header = document.querySelector("header");

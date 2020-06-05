@@ -84,7 +84,7 @@ section {
   display: none;
 }
 
-.center-pile.2 {
+.center-pile.player2 {
   box-shadow: -10px 0 20px green,
     10px 0 20px green;
 }
