@@ -21,10 +21,14 @@ game.shuffleDeck(game.deck);
 
 game.deal();
 
-//function displayTopCard() {
-//var topCard = document.querySelector(".deck");
-//
-// }
+
+function changeTopCard() {
+  var topCard = document.querySelector(".central-pile");
+  topCard.classList.remove("hidden");
+  topCard.classList.add(`${this.player.id}`);
+  // add border of player's color
+  // 
+}
 
 
 function changeHeader(condition, winningPlayer) {

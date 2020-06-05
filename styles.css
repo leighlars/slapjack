@@ -71,9 +71,9 @@ p {
 }
 
 .p2-hand,
-.center-pile.p2 {
-  box-shadow: -10px 0 20px #cdcb08,
-  10px 0 20px #cdcb08;
+.center-pile.2 {
+  box-shadow: -10px 0 20px green,
+  10px 0 20px green;
 }
 
 .center-pile {
@@ -83,7 +83,7 @@ p {
     height: 375px;
 }
 
-.center-pile.p1 {
+.center-pile.1 {
   box-shadow: -10px 0 20px #0b6fe7,
     10px 0 20px #0b6fe7;
 }
