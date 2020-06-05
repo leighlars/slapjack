@@ -25,18 +25,11 @@ game.deal();
 function changeTopCard() {
   var topCard = document.querySelector(".central-pile");
   topCard.classList.remove("hidden");
-  if (this.player2.playCard()) {
+  // if (this.player2.playCard()) {
     topCard.classList.add("p2");
     // topCard.style.background = image of index
   }
-  // add border of player's color
-  //
-}
 
-function displayTopCard(playedCard) {
-  var topCard = document.querySelector(".central-pile");
-  topCard.
-}
 
 function changeHeader(condition, winningPlayer) {
   var header = document.querySelector("header");
