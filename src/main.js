@@ -26,15 +26,26 @@ game.deal();
 //
 // }
 
-// function changeHeader() {
-// var header = document.querySelector("header");
-// if slapjack, header.innerText = "SLAPJACK! Player ${} takes the pile!";
-// if sandwich, header.innerText = "SANDWICH! Player ${} takes the pile!";
-// if double, header.innerText = "DOUBLE! Player ${} takes the pile!";
-// if bad slap, header.innerText = "BAD SLAP! Player ${} forfeits a card to Player ${otherPlayer}!"
-// if win, header.innerText = "Player ${} wins!"
 
-// }
+function changeHeader(condition, winningPlayer) {
+  var header = document.querySelector("header");
+  if (condition === "win") {
+      header.innerText = `Player ${winningPlayer.id} wins!`;
+  }
+  else if (condition === "slapjack") {
+      header.innerText = `SLAPJACK! Player ${winningPlayer.id} takes the pile!`;
+  }
+  else if (condition === "sandwich") {
+      header.innerText = `SANDWICH! Player ${winningPlayer.id} takes the pile!`;
+  }
+  else if (condition === "double") {
+      header.innerText = `DOUBLE! Player ${winningPlayer.id} takes the pile!`;
+  }
+  else if (condition === "badslap") {
+      header.innerText = `BAD SLAP! Player ${winningPlayer.id} forfeits a card to Player ${otherPlayer}!`;
+  }
+}
+
 
 //function updatePlayerWinsText() {
 // var playerWins = document.querySelector(".p${winningPlayer.id}-text");
