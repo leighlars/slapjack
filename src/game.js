@@ -9,8 +9,7 @@ class Game {
 
   compileDeck() {
     var suit = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
-    var wildCard = 14;
-    var wholeDeck = [...suit, ...suit, ...suit, ...suit, wildCard];
+    var wholeDeck = [...suit, ...suit, ...suit, ...suit];
     return wholeDeck;
   }
 
@@ -60,7 +59,23 @@ class Game {
       // other player's hand.push(lostCard);
       // there will be issues with winTurn and slapPile bc it's not based on keyboard event
     }
+
+    if (any player.hand.length === 0) {
+      other player can deal consecutively now (disable alternating turns)
+      if (current player slaps 11, current player wins);
+      if current player !slap 11, other player
+      if (that player deals all cards and none are 11, this.currentPlayer.hand.push(centralPile)
+    }
   }
+
+// If the player with cards left deals all their cards into the center without revealing a Jack,
+// the central pile returns to that player’s hand, is shuffled, and the player must continue to deal until a Jack is revealed
+// When a Jack is revealed, the player who is out of cards can slap it.
+// The central pile is then their new hand, the game continues as normal.
+// If however, the player who is out of cards slaps something that is not a Jack,
+// or if the player who still has cards slaps the Jack first, then the player who is out of cards loses and the game is over!
+// Doubles and Sandwiches are not valid when one player is completely out of cards - in this case, only a Jack can save them!
+// The only way the player who still has cards can win is by slapping the Jack before the player without cards left does
 
 
 
