@@ -24,7 +24,7 @@ game.deal();
 
 //function displayTopCard() {
 //var topCard = document.querySelector(".deck");
-// topCard
+// 
 // }
 
 // function changeHeader() {
@@ -34,9 +34,10 @@ game.deal();
 // if double, header.innerText = "DOUBLE! Player ${} takes the pile!";
 // if bad slap, header.innerText = "BAD SLAP! Player ${} forfeits a card to Player ${otherPlayer}!"
 // if win, header.innerText = "Player ${} wins!"
+
 // }
 
 //function updatePlayerWinsText() {
-// var player1Text =
-// var player2Text = 
+// var playerWins = document.querySelector(".p${winningPlayer.id}-text");
+// playerWins.innerText = `${winningPlayer.wins.length} wins`;
 // }
