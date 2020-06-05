@@ -79,15 +79,16 @@ class Game {
       resetGame();
     }
     if (topCard === 11 && player with no cards .slapPile()) {
-      
+      this.winTurn();
+    }
+    if (topCard != && player with no cards .slapPile()) {
+      other player wins.
     }
   }
 
-  // if (any player.hand.length === 0) {
-  //   other player can deal consecutively now (disable alternating turns)
-  //   if (that player slaps 11 first, that player.updatePlayerWins()),
-  //  if (player w cards deals all cards and topCard != 11, that player winTurn() and deals until topCard = 11)
-  // if player with no cards slaps 11 first, that player.winsTurn() and game is back to normal (enable alternate turns));
+
+//  if (player w cards deals all cards and topCard != 11, that player winTurn() and deals until topCard = 11)
+// if player with no cards slaps 11 first, that player.winTurn() and game is back to normal (enable alternate turns));
 //  if topCard != 11 and empty card player slaps, other player wins
 
 
