@@ -5,7 +5,6 @@ class Game {
     this.deck = this.compileDeck();
     this.centralPile = [];
     this.currentPlayer = true;
-
   }
 
   compileDeck() {
@@ -40,17 +39,26 @@ class Game {
   }
 
   playCard() {
-    var playedCard = this.currentPlayer.hand.pop();
+    var playedCard = this.currentPlayer ? this.player1.hand.pop() : this.player2.hand.pop();
     this.centralPile.push(playedCard);
+    playerTurn();
+  }
+
+  function winTurn() {
+    this.currentPlayer.hand.push(this.centralPile);
+    this.shuffleDeck(this.currentPlayer.hand);
   }
 
   slapPile() {
     var topCard = this.centralPile[this.centralPile.length - 1];
-    if (topCard == 11) {
-      this.currentPlayer.hand.push(this.centralPile);
-      this.shuffleDeck(this.currentPlayer.hand);
+    var secondCard = this.centralPile[this.centralPile.length - 2];
+    var thirdCard = this.centralPile[this.centralPile.length - 3];
+    if (topCard == 11 || topCard == secondCard || topCard == thirdCard) {
+      this.winTurn();
+    } else {
+      var lostCard = this.currentPlayer.hand.unshift();
+      // other player's hand.push(lostCard);
     }
-    
   }
 
 
