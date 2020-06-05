@@ -62,10 +62,10 @@ My estimated schedule is as follows:
 
 ## Functionality Showcase
 
-<p align="center">Image of Desktop View </br>
-  <img width="460" height="300" src="" alt="Screenshot of Desktop View">
+<p align="center">Gif of Gameplay </br>
+  <img width="460" height="300" src="" alt="Gif of Desktop View">
 </p>
 
-<p align="center">Image of Mobile View </br>
-  <img width="300" height="500" src="" alt="Screenshot of Mobile View">
+<p align="center">Gif of Gameplay </br>
+  <img width="300" height="500" src="" alt="Gif of Gameplay">
 </p>
