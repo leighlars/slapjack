@@ -27,7 +27,6 @@ function changeTopCard() {
     // topCard.style.background = image of index
   }
 
-
 function changeHeader(condition, winningPlayer) {
   var header = document.querySelector("header");
   if (condition === "win") {

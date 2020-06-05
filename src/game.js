@@ -15,7 +15,7 @@ class Game {
     return wholeDeck;
   }
 
-  shuffleDeck(cardPile) {
+  shuffleCards(cardPile) {
     for (var i = cardPile.length -1; i > 0; i--) {
       var randomIndex = Math.floor(Math.random() * i)
       var temporary = cardPile[i]
@@ -25,7 +25,7 @@ class Game {
   }
 
   deal() {
-    this.deck.shuffleDeck(this.deck);
+    this.deck.shuffleCards(this.deck);
     for (var i = 0; i < this.deck.length -1; i++) {
       if ([i] % 2 === 0) {
         this.player1.hand.push(this.deck[i]);
