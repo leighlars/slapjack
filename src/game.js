@@ -9,8 +9,7 @@ class Game {
 
   compileDeck() {
     var suit = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
-    var wildCard = 14;
-    var wholeDeck = [...suit, ...suit, ...suit, ...suit, wildCard];
+    var wholeDeck = [...suit, ...suit, ...suit, ...suit];
     return wholeDeck;
   }
 
@@ -41,7 +40,7 @@ class Game {
   playCard() {
     var playedCard = this.currentPlayer ? this.player1.hand.pop() : this.player2.hand.pop();
     this.centralPile.push(playedCard);
-    playerTurn();
+    this.playerTurn();
   }
 
   winTurn() {
@@ -62,15 +61,45 @@ class Game {
     }
   }
 
-
-
-
-  updatePlayerWins() {
-
+  checkWinConditions() {
+    if (this.player1.hand.length === 0) {
+      this.player2.playCard();
+      this.playerTurn();
+    }
+    if (this.player2.hand.length === 0) {
+      this.player1.playCard();
+      this.playerTurn();
+    }
   }
 
-  resetGame() {
-    // this.shuffleDeck();
+  gameWinSlap() {
+    if (topCard === 11 && player with cards.slapPile()) {
+      this.player${id}.this.wins.push(game);
+      resetGame();
+    }
+    if (topCard === 11 && player with no cards .slapPile()) {
+    }
   }
+
+  // if (any player.hand.length === 0) {
+  //   other player can deal consecutively now (disable alternating turns)
+  //   if (that player slaps 11 first, that player.updatePlayerWins()),
+  //  if (player w cards deals all cards and topCard != 11, that player winTurn() and deals until topCard = 11)
+  // if player with no cards slaps 11 first, that player.winsTurn() and game is back to normal (enable alternate turns));
+//  if topCard != 11 and empty card player slaps, other player wins
+
+
+
+  // updatePlayerWins() {
+  //   this.player${id}.wins.push(game);
+  // }
+
+  // resetGame() {
+  //   this.player1.hand.length === 0;
+  //   this.player2.hand.length === 0;
+  //   this.deck
+  //   this.shuffleDeck();
+  //   deal();
+  // }
 
 }
