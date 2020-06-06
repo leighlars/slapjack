@@ -32,7 +32,7 @@ function changeTopCard(playedCard) {
   }
 
 function hideHand() {
-    document.querySelector(`.p${losingPlayer}2-hand`).classList.add("hidden");
+    document.querySelector(`.p${losingPlayer.id}-hand`).classList.add("hidden");
   }
 
 function changeHeader(condition, winningPlayer) {
