@@ -73,6 +73,7 @@ class Game {
   }
 
   gameWinSlap(winningPlayer, losingPlayer) {
+    checkEmptyHand();
     var topCard = document.querySelector(".center-pile");
     if ((topCard === 11 && winningPlayer.slapPile()) ||
         (topCard != 11 && losingPlayer.slapPile())) {
