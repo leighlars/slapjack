@@ -39,20 +39,24 @@ class Game {
   slapPile() {
     var topCard = this.centerPile[this.centerPile.length - 1];
     var secondCard = this.centerPile[this.centerPile.length - 2];
-    var thirdCard = this.centerPile[this.centralPile.length - 3];
-    if (topCard == 11 || topCard == secondCard || topCard == thirdCard) {
+    var thirdCard = this.centerPile[this.centerPile.length - 3];
+    if (topCard === 11 || topCard === secondCard || topCard === thirdCard) {
       this.winTurn();
       // 3 if statements ?
       changeHeader("slapjack");
       changeHeader("sandwich");
       changeHeader("double");
     } else {
-      var lostCard = `this.currentPlayer${id}.hand.unshift()`;
+      var lostCard = `this..hand.unshift()`;
       // other player's hand.push(lostCard);
       changeHeader("badSlap");
       // there will be issues with winTurn and slapPile bc it's not based on keyboard event
     }
   }
+
+  // checkSlapJack() {
+  //   if (topCard == cards[0] || topCard == cards[1] || topCard == cards[2] || topCard == cards[3])
+  // }
 
 // check win conditions
   checkEmptyHand() {

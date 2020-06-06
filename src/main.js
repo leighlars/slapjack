@@ -1,23 +1,30 @@
 var game = new Game();
+var player1 = new Player(1);
+var player2 = new Player(2);
 
 window.onload = game.deal();
 // window.onload = player.retrieveWinsFromStorage();
 document.addEventListener("keydown", keyHandler);
 
 function keyHandler(event) {
-  if (event.keyCode === 81 || event.keyCode === 80) {
-    player.playCard();
+  if (event.keyCode === 81) {
+    player1.playCard();
   }
-  if (event.keyCode === 70 || event.keyCode === 74) {
-    game.slapPile();
+  if (event.keyCode === 80) {
+    player2.playCard();
   }
-  // is event.key the right name/method?
+  if (event.keyCode === 70) {
+    player1.slapPile();
+  }
+  if (event.keyCode === 74) {
+    player2.slapPile()
+  }
 }
 
 function changeTopCard(playedCard) {
   var topCard = document.querySelector(".center-pile");
   topCard.classList.remove("hidden");
-  topCard.style.background = cards.find(card => card === playedCard);
+  // topCard.style.background = url(cards.find(card => card === playedCard));
   game.currentPlayer ? topCard.classList.remove("p2") : topCard.classList.add("p2");
 }
 
