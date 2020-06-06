@@ -55,7 +55,7 @@ class Game {
       changeHeader("sandwich");
       changeHeader("double");
     } else {
-      var lostCard = `this.player${id}.hand.unshift()`;
+      var lostCard = `this.currentPlayer${id}.hand.unshift()`;
       // other player's hand.push(lostCard);
       changeHeader("badSlap");
       // there will be issues with winTurn and slapPile bc it's not based on keyboard event
