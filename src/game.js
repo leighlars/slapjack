@@ -2,20 +2,15 @@ class Game {
   constructor() {
     this.player1 = new Player(1);
     this.player2 = new Player(2);
-    this.deck = this.compileDeck();
+    this.deck = cards;
     this.centerPile = [];
     this.currentPlayer = true;
   }
 
 // general play
-  compileDeck() {
-    var redSuit = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
-    var blueSuit = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
-    var goldSuit = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
-    var greenSuit = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
-    var wholeDeck = redSuit.concat(blueSuit, goldSuit, greenSuit);
-    return wholeDeck;
-  }
+  // compileDeck() {
+  //   return cards;
+  // }
 
   shuffleCards(cardPile) {
     for (var i = cardPile.length -1; i > 0; i--) {
