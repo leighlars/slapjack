@@ -55,7 +55,7 @@ class Game {
       changeHeader("sandwich");
       changeHeader("double");
     } else {
-      var lostCard = `this.player${id}.hand.unshift()`;
+      var lostCard = `this.currentPlayer${id}.hand.unshift()`;
       // other player's hand.push(lostCard);
       changeHeader("badSlap");
       // there will be issues with winTurn and slapPile bc it's not based on keyboard event
@@ -67,11 +67,12 @@ class Game {
     var players = [this.player1, this.player2];
     var losingPlayer = players.find(player => player.hand.length === 0);
     var winningPlayer = players.find(player => player.hand.length != 0);
-    winningPlayer.player.playCard();
-    this.playerTurn();
+    handDisplay(losingPlayer);
+    
   }
 
   gameWinSlap(winningPlayer, losingPlayer) {
+    checkEmptyHand();
     var topCard = document.querySelector(".center-pile");
     if ((topCard === 11 && winningPlayer.slapPile()) ||
         (topCard != 11 && losingPlayer.slapPile())) {

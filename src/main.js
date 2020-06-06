@@ -22,10 +22,13 @@ function keyHandler() {
 function changeTopCard(playedCard) {
   var topCard = document.querySelector(".center-pile");
   topCard.classList.remove("hidden");
-  // if (this.player2.playCard()) {
-    topCard.classList.add("p2");
-    topCard.style.background = images.find(image => image === playedCard);
-    // still need to figure out how to connect each img with array[i]
+  topCard.style.background = images.find(image => image === playedCard);
+  // still need to figure out how to connect each img with array[i]
+  // player2 played the card ? topCard.classList.add("p2") : topCard.classList.remove("p2");
+}
+
+function hideHand() {
+    document.querySelector(`.p${losingPlayer.id}-hand`).classList.add("hidden");
   }
 
 function changeHeader(condition, winningPlayer) {
