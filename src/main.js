@@ -24,14 +24,18 @@ function keyHandler(event) {
 function changeTopCard(playedCard) {
   var topCard = document.querySelector(".center-pile");
   topCard.classList.remove("hidden");
-  topCard.style.background =
-  // topCard.style.background = url(cards.find(card => card.src === playedCard.src));
+  // topCard.style.backgroundImage = url(playedCard);
   game.currentPlayer ? topCard.classList.remove("p2") : topCard.classList.add("p2");
 }
 
 function hideHand() {
-    document.querySelector(`.p${losingPlayer.id}-hand`).classList.add("hidden");
+  if (game.player1.hand.length === 0) {
+    document.querySelector(`.p1-hand`).add("hidden");
   }
+  if (game.player2.hand.length === 0) {
+    document.querySelector(`.p2-hand`).add("hidden");
+  }
+}
 
 function changeHeader(condition, winningPlayer) {
   var header = document.querySelector("header");

@@ -44,12 +44,13 @@ class Game {
       changeHeader("slapjack");
       changeHeader("sandwich");
       changeHeader("double");
-    } else {
-      var lostCard = `this..hand.unshift()`;
-      // other player's hand.push(lostCard);
-      changeHeader("badSlap");
-      // there will be issues with winTurn and slapPile bc it's not based on keyboard event
     }
+    // } else {
+    //   // var lostCard = `this..hand.unshift()`;
+    //   // other player's hand.push(lostCard);
+    //   changeHeader("badSlap");
+    //   // there will be issues with winTurn and slapPile bc it's not based on keyboard event
+    // }
   }
 
   // checkSlapJack() {
@@ -61,7 +62,6 @@ class Game {
     var players = [this.player1, this.player2];
     var losingPlayer = players.find(player => player.hand.length === 0);
     var winningPlayer = players.find(player => player.hand.length != 0);
-    handDisplay(losingPlayer);
     // need to have losingPlayer and winningPlayer appear in gameWinSlap
   }
 

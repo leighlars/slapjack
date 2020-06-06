@@ -59,7 +59,7 @@ section {
 .cards {
   display: flex;
   align-content: center;
-  background-image: url("assets/back.png");
+  background-image: url("./assets/back.png");
   background-position:center;
   background-repeat: no-repeat;
   background-size: cover;
