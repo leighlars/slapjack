@@ -17,12 +17,13 @@ function keyHandler() {
   if (event.key === 74 ) {
     game.player2.slapPile();
   }
+  // is event.key the right name/method?
 }
 
 function changeTopCard(playedCard) {
   var topCard = document.querySelector(".center-pile");
   topCard.classList.remove("hidden");
-  topCard.style.background = images.find(image => image === playedCard);
+  topCard.style.background = cards.find(card => card === playedCard);
   // still need to figure out how to connect each img with array[i]
   // player2 played the card ? topCard.classList.add("p2") : topCard.classList.remove("p2");
 }
