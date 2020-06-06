@@ -3,14 +3,17 @@ class Game {
     this.player1 = new Player(1);
     this.player2 = new Player(2);
     this.deck = this.compileDeck();
-    this.centralPile = [];
+    this.centerPile = [];
     this.currentPlayer = true;
   }
 
 // general play
   compileDeck() {
-    var suit = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
-    var wholeDeck = [...suit, ...suit, ...suit, ...suit];
+    var redSuit = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+    var blueSuit = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+    var goldSuit = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+    var greenSuit = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+    var wholeDeck = redSuit.concat(blueSuit, goldSuit, greenSuit);
     return wholeDeck;
   }
 
@@ -24,14 +27,11 @@ class Game {
   }
 
   deal() {
-    this.deck.shuffleCards(this.deck);
-    for (var i = 0; i < this.deck.length -1; i++) {
-      if ([i] % 2 === 0) {
-        this.player1.hand.push(this.deck[i]);
-      } else {
-        this.player2.hand.push(this.deck[i]);
-      }
-    }
+    this.shuffleCards(this.deck);
+    var half1 = this.deck.slice(0, 26);
+    var half2 = this.deck.slice(26, 53);
+    this.player1.hand.push(half1);
+    this.player2.hand.push(half2);
   }
 
   playerTurn() {
@@ -40,14 +40,14 @@ class Game {
 
 // check slap conditions
   winTurn() {
-    this.currentPlayer.hand.push(this.centralPile);
+    this.currentPlayer.hand.push(this.centerPile);
     this.shuffleCards(this.currentPlayer.hand);
   }
 
   slapPile() {
-    var topCard = this.centralPile[this.centralPile.length - 1];
-    var secondCard = this.centralPile[this.centralPile.length - 2];
-    var thirdCard = this.centralPile[this.centralPile.length - 3];
+    var topCard = this.centerPile[this.centerPile.length - 1];
+    var secondCard = this.centerPile[this.centerPile.length - 2];
+    var thirdCard = this.centerPile[this.centralPile.length - 3];
     if (topCard == 11 || topCard == secondCard || topCard == thirdCard) {
       this.winTurn();
       // 3 if statements ?
@@ -55,9 +55,9 @@ class Game {
       changeHeader("sandwich");
       changeHeader("double");
     } else {
-      var lostCard = this[player${id}.hand].unshift();
-      changeHeader("badslap");
+      var lostCard = `this.player${id}.hand.unshift()`;
       // other player's hand.push(lostCard);
+      changeHeader("badSlap");
       // there will be issues with winTurn and slapPile bc it's not based on keyboard event
     }
   }
@@ -72,9 +72,9 @@ class Game {
   }
 
   gameWinSlap(winningPlayer, losingPlayer) {
-    var topCard = document.querySelector(".central-pile");
-    if (topCard === 11 && winningPlayer.slapPile() ||
-      topCard != 11 && losingPlayer.slapPile()) {
+    var topCard = document.querySelector(".center-pile");
+    if ((topCard === 11 && winningPlayer.slapPile()) ||
+        (topCard != 11 && losingPlayer.slapPile())) {
         this.gameOver(winningPlayer);
     }
     if (topCard === 11 && losingPlayer.slapPile()) {
@@ -83,18 +83,18 @@ class Game {
   }
 
   gameOver(winner) {
-      winner.wins.push(game);
-      winner.saveWinsToStorage();
-      changeHeader("win", winner);
-      setTimeout(changeHeader, 500);
-      setTimeout(this.resetGame, 500;
+    winner.wins.push(game);
+    winner.saveWinsToStorage();
+    changeHeader("win", winner);
+    setTimeout(changeHeader, 500);
+    setTimeout(this.resetGame, 500);
   }
 
   resetGame() {
     this.player1.hand.length === 0;
     this.player2.hand.length === 0;
-    document.querySelector(".central-pile").add("hidden");
-    deal();
+    document.querySelector(".center-pile").classList.add("hidden");
+    this.deal();
   }
 
 }

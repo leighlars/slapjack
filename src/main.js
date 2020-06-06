@@ -6,10 +6,10 @@ document.addEventListener("keydown", keyHandler);
 
 function keyHandler() {
   if (event.key === 81) {
-    game.player1.playCard();
+    player.playCard();
   }
   if (event.key === 70) {
-    game.player1.slapPile();
+    player.slapPile();
   }
   if (event.key === 80) {
     game.player2.playCard();
@@ -20,7 +20,7 @@ function keyHandler() {
 }
 
 function changeTopCard(playedCard) {
-  var topCard = document.querySelector(".central-pile");
+  var topCard = document.querySelector(".center-pile");
   topCard.classList.remove("hidden");
   // if (this.player2.playCard()) {
     topCard.classList.add("p2");
@@ -43,7 +43,7 @@ function changeHeader(condition, winningPlayer) {
   else if (condition === "double") {
       header.innerText = `DOUBLE! Player ${winningPlayer.id} takes the pile!`;
   }
-  else if (condition === "badslap") {
+  else if (condition === "badSlap") {
       header.innerText = `BAD SLAP! Player ${winningPlayer.id} forfeits a card to Player ${otherPlayer}!`;
   }
 }
