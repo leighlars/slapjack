@@ -4,18 +4,12 @@ window.onload = game.deal();
 // window.onload = player.retrieveWinsFromStorage();
 document.addEventListener("keydown", keyHandler);
 
-function keyHandler() {
-  if (event.key === 81) {
+function keyHandler(event) {
+  if (event.keyCode === 81 || event.keyCode === 80) {
     player.playCard();
   }
-  if (event.key === 70) {
-    player.slapPile();
-  }
-  if (event.key === 80) {
-    game.player2.playCard();
-  }
-  if (event.key === 74 ) {
-    game.player2.slapPile();
+  if (event.keyCode === 70 || event.keyCode === 74) {
+    game.slapPile();
   }
   // is event.key the right name/method?
 }
@@ -24,8 +18,7 @@ function changeTopCard(playedCard) {
   var topCard = document.querySelector(".center-pile");
   topCard.classList.remove("hidden");
   topCard.style.background = cards.find(card => card === playedCard);
-  // still need to figure out how to connect each img with array[i]
-  // player2 played the card ? topCard.classList.add("p2") : topCard.classList.remove("p2");
+  game.currentPlayer ? topCard.classList.remove("p2") : topCard.classList.add("p2");
 }
 
 function hideHand() {
