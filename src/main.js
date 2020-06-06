@@ -17,14 +17,14 @@ function keyHandler(event) {
     player1.slapPile();
   }
   if (event.keyCode === 74) {
-    player2.slapPile()
+    // player2.slapPile();
   }
 }
 
 function changeTopCard(playedCard) {
   var topCard = document.querySelector(".center-pile");
   topCard.classList.remove("hidden");
-  // topCard.style.background = url(cards.find(card => card === playedCard));
+  topCard.style.background = url(cards.find(card => card.src === playedCard.src));
   game.currentPlayer ? topCard.classList.remove("p2") : topCard.classList.add("p2");
 }
 

@@ -19,10 +19,8 @@ class Game {
 
   deal() {
     this.shuffleCards(this.deck);
-    var half1 = this.deck.slice(0, 26);
-    var half2 = this.deck.slice(26, 53);
-    this.player1.hand.push(half1);
-    this.player2.hand.push(half2);
+    this.player1.hand = this.deck.slice(0, 26);
+    this.player2.hand = this.deck.slice(26, 53);
   }
 
   playerTurn() {
