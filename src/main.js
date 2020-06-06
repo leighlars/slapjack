@@ -1,36 +1,41 @@
 var game = new Game();
+var player1 = new Player(1);
+var player2 = new Player(2);
 
 window.onload = game.deal();
 // window.onload = player.retrieveWinsFromStorage();
 document.addEventListener("keydown", keyHandler);
 
-function keyHandler() {
-  if (event.key === 81) {
-    player.playCard();
+function keyHandler(event) {
+  if (event.keyCode === 81) {
+    player1.playCard();
   }
-  if (event.key === 70) {
-    player.slapPile();
+  if (event.keyCode === 80) {
+    player2.playCard();
   }
-  if (event.key === 80) {
-    game.player2.playCard();
+  if (event.keyCode === 70) {
+    player1.slapPile();
   }
-  if (event.key === 74 ) {
-    game.player2.slapPile();
+  if (event.keyCode === 74) {
+    // player2.slapPile();
   }
-  // is event.key the right name/method?
 }
 
 function changeTopCard(playedCard) {
   var topCard = document.querySelector(".center-pile");
   topCard.classList.remove("hidden");
-  topCard.style.background = cards.find(card => card === playedCard);
-  // still need to figure out how to connect each img with array[i]
-  // player2 played the card ? topCard.classList.add("p2") : topCard.classList.remove("p2");
+  // topCard.style.backgroundImage = url(playedCard);
+  game.currentPlayer ? topCard.classList.remove("p2") : topCard.classList.add("p2");
 }
 
 function hideHand() {
-    document.querySelector(`.p${losingPlayer.id}-hand`).classList.add("hidden");
+  if (game.player1.hand.length === 0) {
+    document.querySelector(`.p1-hand`).add("hidden");
   }
+  if (game.player2.hand.length === 0) {
+    document.querySelector(`.p2-hand`).add("hidden");
+  }
+}
 
 function changeHeader(condition, winningPlayer) {
   var header = document.querySelector("header");
