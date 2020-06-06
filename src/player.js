@@ -3,7 +3,6 @@ class Player {
     this.id = id;
     this.wins = 0;
     this.hand = [];
-
   }
 
   playCard() {

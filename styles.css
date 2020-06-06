@@ -70,21 +70,17 @@ section {
   width: 260px;
 }
 
-.p2-hand {
-  box-shadow: -10px 0 20px green,
-  10px 0 20px green;
-}
-
 .center-pile {
     margin-bottom: 65px;
     height: 375px;
 }
 
-.hidden {
-  display: none;
+.p2-hand,
+.center-pile.player2 {
+  box-shadow: -10px 0 20px rgb(179,28,181),
+  10px 0 20px rgb(179,28,181);
 }
 
-.center-pile.player2 {
-  box-shadow: -10px 0 20px green,
-    10px 0 20px green;
+.hidden {
+  display: none;
 }

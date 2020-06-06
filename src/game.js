@@ -85,7 +85,7 @@ class Game {
   gameOver(winner) {
       winner.wins.push(game);
       winner.saveWinsToStorage();
-      changeHeader("win");
+      changeHeader("win", winner);
       setTimeout(changeHeader, 500);
       setTimeout(this.resetGame, 500;
   }
