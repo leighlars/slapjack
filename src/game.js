@@ -69,6 +69,7 @@ class Game {
     var winningPlayer = players.find(player => player.hand.length != 0);
     winningPlayer.player.playCard();
     this.playerTurn();
+    handDisplay(losingPlayer);
   }
 
   gameWinSlap(winningPlayer, losingPlayer) {
