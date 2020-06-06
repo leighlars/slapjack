@@ -42,6 +42,7 @@ class Game {
   winTurn() {
     this.currentPlayer.hand.push(this.centerPile);
     this.shuffleCards(this.currentPlayer.hand);
+    // isn't currentPlayer a boolean value?
   }
 
   slapPile() {
@@ -68,7 +69,7 @@ class Game {
     var losingPlayer = players.find(player => player.hand.length === 0);
     var winningPlayer = players.find(player => player.hand.length != 0);
     handDisplay(losingPlayer);
-    
+    // need to have losingPlayer and winningPlayer appear in gameWinSlap
   }
 
   gameWinSlap(winningPlayer, losingPlayer) {

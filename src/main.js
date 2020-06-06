@@ -17,6 +17,7 @@ function keyHandler() {
   if (event.key === 74 ) {
     game.player2.slapPile();
   }
+  // is event.key the right name/method?
 }
 
 function changeTopCard(playedCard) {
