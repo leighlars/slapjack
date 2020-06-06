@@ -7,8 +7,8 @@ class Player {
 
   playCard() {
     var playedCard = game.currentPlayer ? game.player1.hand.pop() : game.player2.hand.pop();
-    game.centralPile.push(playedCard);
-    game.changeTopCard(playedCard);
+    game.centerPile.push(playedCard);
+    changeTopCard(playedCard);
     game.playerTurn();
   }
 
