@@ -1,7 +1,7 @@
 var game = new Game();
 
 window.onload = game.deal();
-window.onload = player.retrieveWinsFromStorage();
+// window.onload = player.retrieveWinsFromStorage();
 document.addEventListener("keydown", keyHandler);
 
 function keyHandler() {

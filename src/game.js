@@ -90,10 +90,10 @@ class Game {
       setTimeout(this.resetGame, 500;
   }
 
-
   resetGame() {
     this.player1.hand.length === 0;
     this.player2.hand.length === 0;
+    document.querySelector(".central-pile").add("hidden");
     deal();
   }
 
