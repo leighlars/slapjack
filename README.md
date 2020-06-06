@@ -70,12 +70,9 @@ My estimated schedule is as follows:
 
 6/7:
 
-## Functionality Showcase
+## Gameplay Video
 
-<p align="center">Gif of Gameplay </br>
-  <img width="460" height="300" src="" alt="Gif of Desktop View">
+<p align="center">Video of Gameplay </br>
+  <iframe width="840" height="473" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 </p>
 
-<p align="center">Gif of Gameplay </br>
-  <img width="300" height="500" src="" alt="Gif of Gameplay">
-</p>
