@@ -62,9 +62,9 @@ My estimated schedule is as follows:
   <img width="460" height="300" src="./readme-images/desktop-view.png" alt="Screenshot of Desktop View">
 </p>
 
-6/4: This was initial setup day. Set up repo, Slack channel, DTR, project board, ReadMe. Wireframe HTML/CSS, review project rubric and spec and pseudocode basic outline of what elements are needed and what functionality to be implemented.Set up JS class files with properties and methods. Initiate crude construct of semantic HTML & organized CSS. I added the properties and most of the methods for Player and Game classes for console play with the data model. I also added localStorage functions to Player but they are not invoked. It's possible some of my data model functionality may have a bug when events occur, but I'll fix that problem after I add event functionality / listeners. 
+6/4: This was initial setup day. Set up repo, Slack channel, DTR, project board, ReadMe. Wireframe HTML/CSS, review project rubric and spec and pseudocode basic outline of what elements are needed, and what functionality to be implemented. Set up JS class files with properties and methods. Initiate crude construct of semantic HTML & organized CSS. I added the properties and most of the methods for Player and Game classes for console play with the data model. I also added localStorage functions to Player but they are not invoked. It's possible some of my data model functionality may have a bug when events occur, but I'll fix that problem after I add event functionality / listeners. 
 
-6/5:
+6/5: Created functionality for the following items: key handler to handle all key controls, reset game, change header on DOM based on gameplay, slap conditions, and deal() onload listener. I modified the deck compiler method to get arrays of each type of  and deal method for each player to get equal cards on load. I modified names in HTML, CSS, and in JS files for specificity. I cleaned up HTML for screen readers. I added a CSS class to style the central pile border shadow based on the player who added the card in that turn.
 
 6/6:
 
