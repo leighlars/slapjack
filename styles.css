@@ -76,7 +76,7 @@ section {
 }
 
 .p2-hand,
-.center-pile.player2 {
+.center-pile.p2 {
   box-shadow: -10px 0 20px rgb(179,28,181),
   10px 0 20px rgb(179,28,181);
 }

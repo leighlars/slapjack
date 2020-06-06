@@ -24,7 +24,8 @@ function keyHandler(event) {
 function changeTopCard(playedCard) {
   var topCard = document.querySelector(".center-pile");
   topCard.classList.remove("hidden");
-  topCard.style.background = url(cards.find(card => card.src === playedCard.src));
+  topCard.style.background =
+  // topCard.style.background = url(cards.find(card => card.src === playedCard.src));
   game.currentPlayer ? topCard.classList.remove("p2") : topCard.classList.add("p2");
 }
 
