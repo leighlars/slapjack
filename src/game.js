@@ -38,7 +38,8 @@ class Game {
     var topCard = this.centerPile[this.centerPile.length - 1];
     var secondCard = this.centerPile[this.centerPile.length - 2];
     var thirdCard = this.centerPile[this.centerPile.length - 3];
-    if (topCard === 11 || topCard === secondCard || topCard === thirdCard) {
+    checkSlapJack();
+    if (topCard === secondCard || topCard === thirdCard) {
       this.winTurn();
       // 3 if statements ?
       changeHeader("slapjack");
@@ -53,9 +54,14 @@ class Game {
     // }
   }
 
-  // checkSlapJack() {
-  //   if (topCard == cards[0] || topCard == cards[1] || topCard == cards[2] || topCard == cards[3])
-  // }
+  checkSlapJack() {
+    var topCard = this.centerPile[this.centerPile.length - 1];
+    var jacks = [cards[0], cards[1], cards[2], cards[3]];
+    if (jacks.includes(topCard)) {
+      this.winTurn();
+      changeHeader("slapjack");
+    }
+  }
 
 // check win conditions
   checkEmptyHand() {
@@ -66,7 +72,6 @@ class Game {
   }
 
   gameWinSlap(winningPlayer, losingPlayer) {
-    checkEmptyHand();
     var topCard = document.querySelector(".center-pile");
     if ((topCard === 11 && winningPlayer.slapPile()) ||
         (topCard != 11 && losingPlayer.slapPile())) {
