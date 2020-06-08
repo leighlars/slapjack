@@ -5,6 +5,7 @@ class Game {
     this.deck = cards;
     this.centerPile = [];
     this.currentPlayer = true;
+    this.header = "";
   }
 
 // general play
@@ -28,55 +29,35 @@ class Game {
   }
 
 // check slap conditions
-  slapPile() {
+  slapPile(player) {
     var topCard = this.centerPile[this.centerPile.length - 1];
     var secondCard = this.centerPile[this.centerPile.length - 2];
     var thirdCard = this.centerPile[this.centerPile.length - 3];
-    this.checkSlapJack();
-    if (topCard.value === secondCard.value) {
-      this.winTurn();
-      changeHeader("double", winningPlayer);
-    } if (topCard.value === thirdCard.value) {
-      this.winTurn();
-      changeHeader("sandwich", winningPlayer);
+    if (topCard && "jack" === topCard.value) {
+      this.winTurn(player, "slapjack");
+    } else if (topCard && secondCard && topCard.value === secondCard.value) {
+      this.winTurn(player, "double");
+    } else if (topCard && thirdCard && topCard.value === thirdCard.value) {
+      this.winTurn(player, "sandwich");
     } else {
-      this.checkBadSlap();
+      this.badSlap(player);
     }
-      this.gameWinSlap();
-     // there will be issues with
-     // winTurn, slapPile, checkBadSlap
-    // bc it's not based on keyboard event/currentPlayer
   }
 
-  winTurn() {
-    var player = this.currentPlayer ? this.player1 : this.player2;
-    player.hand.push(this.centerPile);
+  winTurn(player, header) {
+    for (var i = 0; i < this.centerPile.length; i++) {
+      player.hand.push(this.centerPile[i]);
+    }
+    this.centerPile = [];
     this.shuffleCards(player.hand);
+    this.header = header;
   }
 
-  checkBadSlap() {
-    if (currentPlayer) {
-      var lostCard = this.player1.hand.unshift();
-      player2.hand.push(lostCard);
-      changeHeader("badSlap", this.player2, this.player1);
-    }
-    if (!currentPlayer) {
-      var lostCard = this.player2.hand.unshift();
-      player1.hand.push(lostCard);
-      changeHeader("badSlap", this.player1, this.player2);
-    }
-  }
-
-  checkSlapJack() {
-    var topCard = this.centerPile[this.centerPile.length - 1];
-    var jacks = [cards[0], cards[1], cards[2], cards[3]];
-    for (var i = 0; i < jacks.length; i++) {
-      if (jacks[i].value === topCard.value) {
-        this.winTurn();
-        changeHeader("slapjack", player, player);
-        // find which player ^^
-      }
-    }
+  badSlap(player) {
+    var opponent = player.id === 1 ? this.player2 : this.player1;
+    var lostCard = player.hand.pop();
+    opponent.hand.unshift(lostCard);
+    this.header = "badSlap";
   }
 
 // check win conditions
@@ -84,31 +65,25 @@ class Game {
     var losingPlayer = players.find(player => player.hand.length === 0);
     var winningPlayer = players.find(player => player.hand.length != 0);
     var topCard = this.centerPile[this.centerPile.length - 1];
-    var jacks = [cards[0], cards[1], cards[2], cards[3]];
-    if ((jacks.includes(topCard) && winningPlayer.slapPile()) ||
-        (!jacks.includes(topCard) && losingPlayer.slapPile())) {
+    if ((topCard.value === "jack" && winningPlayer.slapPile) ||
+        (topCard.value != "jack") && losingPlayer.slapPile) {
           // ^^ find which player
         this.gameOver(winningPlayer);
     }
     if (jacks.includes(topCard) && losingPlayer.slapPile()) {
       this.winTurn();
-      hideHand();
     }
   }
 
+// end game
   gameOver(winner) {
     winner.wins.push(game);
     winner.saveWinsToStorage();
-    updatePlayerWinsText(winner);
-    changeHeader("win", winner);
-    setTimeout(changeHeader, 500);
-    setTimeout(this.resetGame, 500);
   }
 
   resetGame() {
     this.player1.hand.length === 0;
     this.player2.hand.length === 0;
-    document.querySelector(".center-pile").classList.add("hidden");
     this.deal();
   }
 

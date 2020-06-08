@@ -1,63 +1,83 @@
 var game = new Game();
-var player1 = new Player(1);
-var player2 = new Player(2);
 
 window.onload = game.deal();
 // window.onload = player.retrieveWinsFromStorage();
 document.addEventListener("keydown", keyHandler);
+// document.addEventListener("keyup", updateDisplay);
 
 function keyHandler(event) {
-  if (event.keyCode === 81) {
-    player1.playCard();
+  var slapper = null;
+  if (event.key === "q" && game.currentPlayer === true) {
+    game.player1.playCard();
+    changeTopCard();
   }
-  if (event.keyCode === 80) {
-    player2.playCard();
+  if (event.key === "p" && game.currentPlayer === false) {
+    game.player2.playCard();
+    changeTopCard();
   }
-  if (event.keyCode === 70) {
-    // game.slapPile();
+  if (event.key === "f") {
+    game.slapPile(game.player1);
+    slapper = game.player1;
   }
-  if (event.keyCode === 74) {
-    // game.slapPile();
+  if (event.key === "j") {
+    game.slapPile(game.player2);
+    slapper = game.player2;
+
   }
-  // how to stop another player from going?
+  updateDisplay(slapper);
 }
 
-function changeTopCard(playedCard) {
+function updateDisplay(slapper) {
+  if (slapper) {
+    var opponent = slapper.id === 1 ? game.player2 : game.player1;
+    changeHeader(game.header, slapper);
+    hideCards();
+    var winner = slapper.hand.length === 52 ? slapper : opponent;
+  }
+  // if (game.header === "win") {
+//     updatePlayerWinsText(winner);
+//     setTimeout(changeHeader, 500);
+//     setTimeout(game.resetGame, 500);
+//   }
+}
+
+function changeTopCard() {
+  var playedCard = game.centerPile[game.centerPile.length - 1];
   var topCard = document.querySelector(".center-pile");
   topCard.classList.remove("hidden");
   topCard.style.backgroundImage = `url(${playedCard.src})`;
-  game.currentPlayer ? topCard.classList.remove("p2") : topCard.classList.add("p2");
+  game.currentPlayer ? topCard.classList.add("p2") : topCard.classList.remove("p2");
 }
 
-function hideHand() {
-  if (game.player1.hand.length === 0) {
-    document.querySelector(`.p1-hand`).classList.add("hidden");
-  }
-  if (game.player2.hand.length === 0) {
-    document.querySelector(`.p2-hand`).classList.add("hidden");
-  } else {
-    document.querySelector(`.p1-hand`).classList.remove("hidden");
-    document.querySelector(`.p2-hand`).classList.remove("hidden");
+function hideCards() {
+  var centerPile = document.querySelector(".center-pile");
+  var p1Hand = document.querySelector(`.p1-hand`);
+  var p2Hand = document.querySelector(`.p2-hand`);
+  var decksHTML = [centerPile, p1Hand, p2Hand];
+  var decks = [game.centerPile, game.player1.hand, game.player2.hand];
+  for (var i = 0; i < decks.length; i++) {
+    if (decks[i].length === 0) {
+      decksHTML[i].classList.add("hidden");
+    } else {
+      decksHTML[i].classList.remove("hidden");
+    }
   }
 }
 
-function changeHeader(condition, winningPlayer, losingPlayer) {
+function changeHeader(condition, slapper) {
   var header = document.querySelector("header");
   if (condition === "win") {
-      header.innerText = `Player ${winningPlayer.id} wins!`;
-      updatePlayerWinsText(winningPlayer);
-  }
-  else if (condition === "slapjack") {
-      header.innerText = `SLAPJACK! Player ${winningPlayer.id} takes the pile!`;
-  }
-  else if (condition === "sandwich") {
-      header.innerText = `SANDWICH! Player ${winningPlayer.id} takes the pile!`;
-  }
-  else if (condition === "double") {
-      header.innerText = `DOUBLE! Player ${winningPlayer.id} takes the pile!`;
-  }
-  else if (condition === "badSlap") {
-      header.innerText = `BAD SLAP! Player ${losingPlayer.id} forfeits a card to Player ${winningPlayer.id}!`;
+    header.innerText = `Player ${slapper.id} wins!`;
+    updatePlayerWinsText(slapper);
+  } else if (condition === "slapjack") {
+    header.innerText = `SLAPJACK! Player ${slapper.id} takes the pile!`;
+  } else if (condition === "sandwich") {
+    header.innerText = `SANDWICH! Player ${slapper.id} takes the pile!`;
+  } else if (condition === "double") {
+    header.innerText = `DOUBLE! Player ${slapper.id} takes the pile!`;
+  } else if (condition === "badSlap") {
+    var opponentID = slapper.id === 1 ? 2 : 1;
+    header.innerText = `BAD SLAP! Player ${slapper.id} forfeits a card to Player ${opponentID}!`;
   }
 }
 
