@@ -38,46 +38,47 @@ class Game {
     var topCard = this.centerPile[this.centerPile.length - 1];
     var secondCard = this.centerPile[this.centerPile.length - 2];
     var thirdCard = this.centerPile[this.centerPile.length - 3];
-    debugger;
     this.checkSlapJack();
     if (topCard === secondCard) {
       this.winTurn();
-      changeHeader("sandwich", winningPlayer);
+      changeHeader("double", winningPlayer);
     } if (topCard === thirdCard) {
       this.winTurn();
-      changeHeader("double", winningPlayer);
+      changeHeader("sandwich", winningPlayer);
     } else {
       this.checkBadSlap();
+    } else {
+      this.gameWinSlap();
     }
      // there will be issues with
      // winTurn, slapPile, checkBadSlap
     // bc it's not based on keyboard event/currentPlayer
   }
 
-
   checkBadSlap() {
-    // if (currentPlayer) {
+    if (currentPlayer) {
       var lostCard = this.player1.hand.unshift();
       player2.hand.push(lostCard);
-      changeHeader("badSlap");
-    // } else if (!currentPlayer) {
+      changeHeader("badSlap", this.player2, this.player1);
+    }
+    if (!currentPlayer) {
       var lostCard = this.player2.hand.unshift();
       player1.hand.push(lostCard);
-      changeHeader("badSlap", winningPlayer, losingPlayer);
+      changeHeader("badSlap", this.player1, this.player2);
     }
-
+  }
 
   checkSlapJack() {
     var topCard = this.centerPile[this.centerPile.length - 1];
     var jacks = [cards[0], cards[1], cards[2], cards[3]];
     if (jacks.includes(topCard)) {
       this.winTurn();
-      changeHeader("slapjack");
+      changeHeader("slapjack", player, player);
     }
   }
 
 // check win conditions
-  gameWinSlap(winningPlayer, losingPlayer) {
+  gameWinSlap() {
     var losingPlayer = players.find(player => player.hand.length === 0);
     var winningPlayer = players.find(player => player.hand.length != 0);
     var topCard = this.centerPile[this.centerPile.length - 1];
