@@ -28,12 +28,6 @@ class Game {
   }
 
 // check slap conditions
-  winTurn() {
-    var player = this.currentPlayer ? this.player1 : this.player2;
-    player.hand.push(this.centerPile);
-    this.shuffleCards(player.hand);
-  }
-
   slapPile() {
     var topCard = this.centerPile[this.centerPile.length - 1];
     var secondCard = this.centerPile[this.centerPile.length - 2];
@@ -53,6 +47,12 @@ class Game {
      // winTurn, slapPile, checkBadSlap
     // bc it's not based on keyboard event/currentPlayer, and bc file paths
     // will never equal
+  }
+
+  winTurn() {
+    var player = this.currentPlayer ? this.player1 : this.player2;
+    player.hand.push(this.centerPile);
+    this.shuffleCards(player.hand);
   }
 
   checkBadSlap() {
@@ -75,6 +75,7 @@ class Game {
       if (jacks[i].value === topCard.value) {
         this.winTurn();
         changeHeader("slapjack", player, player);
+        // find which player ^^
       }
     }
   }
@@ -87,6 +88,7 @@ class Game {
     var jacks = [cards[0], cards[1], cards[2], cards[3]];
     if ((jacks.includes(topCard) && winningPlayer.slapPile()) ||
         (!jacks.includes(topCard) && losingPlayer.slapPile())) {
+          // ^^ find which player
         this.gameOver(winningPlayer);
     }
     if (jacks.includes(topCard) && losingPlayer.slapPile()) {
