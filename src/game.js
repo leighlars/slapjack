@@ -42,18 +42,17 @@ class Game {
     this.checkSlapJack();
     if (topCard === secondCard) {
       this.winTurn();
-      changeHeader("sandwich");
+      changeHeader("sandwich", winningPlayer);
     } if (topCard === thirdCard) {
       this.winTurn();
-      changeHeader("double");
+      changeHeader("double", winningPlayer);
+    } else {
+      this.checkBadSlap();
     }
-  } else {
-    this.checkBadSlap();
-  }
      // there will be issues with
      // winTurn, slapPile, checkBadSlap
     // bc it's not based on keyboard event/currentPlayer
-}
+  }
 
 
   checkBadSlap() {
@@ -64,9 +63,9 @@ class Game {
     // } else if (!currentPlayer) {
       var lostCard = this.player2.hand.unshift();
       player1.hand.push(lostCard);
-      changeHeader("badSlap");
+      changeHeader("badSlap", winningPlayer, losingPlayer);
     }
-  }
+
 
   checkSlapJack() {
     var topCard = this.centerPile[this.centerPile.length - 1];

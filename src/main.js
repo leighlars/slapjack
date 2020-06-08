@@ -2,6 +2,7 @@ var game = new Game();
 var player1 = new Player(1);
 var player2 = new Player(2);
 
+
 window.onload = game.deal();
 // window.onload = player.retrieveWinsFromStorage();
 document.addEventListener("keydown", keyHandler);
@@ -14,17 +15,17 @@ function keyHandler(event) {
     player2.playCard();
   }
   if (event.keyCode === 70) {
-    game.slapPile();
+    // game.slapPile();
   }
   if (event.keyCode === 74) {
-    game.slapPile();
+    // game.slapPile();
   }
 }
 
 function changeTopCard(playedCard) {
   var topCard = document.querySelector(".center-pile");
   topCard.classList.remove("hidden");
-  topCard.style.backgroundImage = url(playedCard);
+  topCard.style.backgroundImage = `url(${playedCard})`;
   game.currentPlayer ? topCard.classList.remove("p2") : topCard.classList.add("p2");
 }
 
