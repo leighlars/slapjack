@@ -8,7 +8,7 @@ class Player {
   playCard() {
     if (game.player1.hand.length != 0 || game.player2.hand.length != 0) {
       var playedCard = game.currentPlayer ? game.player1.hand.pop() : game.player2.hand.pop();
-      game.centerPile.push(playedCard);
+      game.centerPile.unshift(playedCard);
       game.playerTurn();
     }
   }

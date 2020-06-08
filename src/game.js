@@ -30,9 +30,9 @@ class Game {
 
 // check slap conditions
   slapPile(player) {
-    var topCard = this.centerPile[this.centerPile.length - 1];
-    var secondCard = this.centerPile[this.centerPile.length - 2];
-    var thirdCard = this.centerPile[this.centerPile.length - 3];
+    var topCard = this.centerPile[0];
+    var secondCard = this.centerPile[1];
+    var thirdCard = this.centerPile[2];
     if (this.player1.hand.length === 0 || this.player2.hand.length === 0) {
       gameWinSlap();
     } else if (topCard && "jack" === topCard.value) {

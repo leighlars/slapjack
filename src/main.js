@@ -23,6 +23,7 @@ function keyHandler(event) {
     slapper = game.player2;
   }
   updateDisplay(slapper);
+  // heaeder lasts for half a second
 }
 
 function updateDisplay(slapper) {
@@ -38,7 +39,7 @@ function updateDisplay(slapper) {
 }
 
 function changeTopCard() {
-  var playedCard = game.centerPile[game.centerPile.length - 1];
+  var playedCard = game.centerPile[0];
   var topCard = document.querySelector(".center-pile");
   topCard.classList.remove("hidden");
   topCard.style.backgroundImage = `url(${playedCard.src})`;
