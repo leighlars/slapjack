@@ -1,40 +1,39 @@
 var game = new Game();
-var player1 = new Player(1);
-var player2 = new Player(2);
 
 window.onload = game.deal();
 // window.onload = player.retrieveWinsFromStorage();
 document.addEventListener("keydown", keyHandler);
+// document.addEventListener("keyup", updateDisplay);
 
 function keyHandler(event) {
   if (event.keyCode === 81 && game.currentPlayer === true) {
-    player1.playCard();
+    game.player1.playCard();
     changeTopCard();
   }
   if (event.keyCode === 80 && game.currentPlayer === false) {
-    player2.playCard();
+    game.player2.playCard();
     changeTopCard();
   }
   if (event.keyCode === 70) {
-    game.slapPile(player1);
+    game.slapPile(game.player1);
   }
   if (event.keyCode === 74) {
-    game.slapPile(player2);
+    game.slapPile(game.player2);
   }
-  updateDisplay();
+  setTimeout(updateDisplay, 1000);
 }
 
 function updateDisplay() {
   var currentPlayer = game.currentPlayer ? game.player1 : game.player2;
   var opponent = game.currentPlayer ? game.player2 : game.player1;
   changeHeader(game.header, currentPlayer, opponent);
-  hideHand();
+  hideCards();
   var winner = currentPlayer.hand.length === 52 ? currentPlayer : opponent;
-  if (game.header === "win") {
-    updatePlayerWinsText(winner);
-    setTimeout(changeHeader, 500);
-    setTimeout(game.resetGame, 500);
-  }
+  // if (game.header === "win") {
+//     updatePlayerWinsText(winner);
+//     setTimeout(changeHeader, 500);
+//     setTimeout(game.resetGame, 500);
+//   }
 }
 
 function changeTopCard() {
@@ -45,7 +44,7 @@ function changeTopCard() {
   game.currentPlayer ? topCard.classList.remove("p2") : topCard.classList.add("p2");
 }
 
-function hideHand() {
+function hideCards() {
   var centerPile = document.querySelector(".center-pile");
   var p1Hand = document.querySelector(`.p1-hand`);
   var p2Hand = document.querySelector(`.p2-hand`);

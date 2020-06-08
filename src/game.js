@@ -33,48 +33,28 @@ class Game {
     var topCard = this.centerPile[this.centerPile.length - 1];
     var secondCard = this.centerPile[this.centerPile.length - 2];
     var thirdCard = this.centerPile[this.centerPile.length - 3];
-    this.checkSlapJack(player);
-    if (topCard.value === secondCard.value) {
-      this.winTurn(player);
-      this.header = "double";
-    } if (topCard.value === thirdCard.value) {
-      this.winTurn(player);
-      this.header = "sandwich";
+    if (topCard && "jack" === topCard.value) {
+      this.winTurn(player, "slapjack");
+    } else if (topCard && secondCard && topCard.value === secondCard.value) {
+      this.winTurn(player, "double");
+    } else if (topCard && thirdCard && topCard.value === thirdCard.value) {
+      this.winTurn(player, "sandwich");
     } else {
-      this.checkBadSlap(player);
+      this.badSlap(player);
     }
-    // this.gameWinSlap();
-     // there will be issues with
-     // winTurn, slapPile, checkBadSlap
-    // bc it's not based on keyboard event/currentPlayer
   }
 
-  // help here
-  winTurn(player) {
+  winTurn(player, header) {
     player.hand.push(this.centerPile);
     this.shuffleCards(player.hand);
+    this.header = header;
   }
 
-// need help here
-  checkBadSlap(player) {
-    if (player1) {
-      var lostCard = this.player1.hand.unshift();
-      player2.hand.push(lostCard);
-      this.header = "badSlap";
-    }
-    if (player2) {
-      var lostCard = this.player2.hand.unshift();
-      player1.hand.push(lostCard);
-      this.header = "badSlap";
-    }
-  }
-
-  checkSlapJack(player) {
-    var topCard = this.centerPile[this.centerPile.length - 1];
-    if ("jack" === topCard.value) {
-      this.winTurn();
-      this.header = "slapjack";
-    }
+  badSlap(player) {
+    var opponent = player.id === 1 ? this.player2 : this.player1;
+    var lostCard = player.hand.unshift();
+    opponent.hand.push(lostCard);
+    this.header = "badSlap";
   }
 
 // check win conditions
