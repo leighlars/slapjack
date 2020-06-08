@@ -45,7 +45,11 @@ class Game {
   }
 
   winTurn(player, header) {
-    player.hand.push(this.centerPile);
+    console.log("made it");
+    for (var i = 0; i < this.centerPile.length; i++) {
+      player.hand.push(this.centerPile[i]);
+    }
+    this.centerPile = [];
     this.shuffleCards(player.hand);
     this.header = header;
   }
