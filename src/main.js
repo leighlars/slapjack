@@ -7,10 +7,12 @@ document.addEventListener("keydown", keyHandler);
 function keyHandler(event) {
   var slapper = null;
   if (event.key === "q" && game.currentPlayer === true) {
+    document.querySelector("header").innerText = "";
     game.player1.playCard();
     changeTopCard();
   }
   if (event.key === "p" && game.currentPlayer === false) {
+    document.querySelector("header").innerText = "";
     game.player2.playCard();
     changeTopCard();
   }
