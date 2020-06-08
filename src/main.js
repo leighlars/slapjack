@@ -14,10 +14,24 @@ function keyHandler(event) {
     player2.playCard();
   }
   if (event.keyCode === 70) {
-    game.slapPile(game.player1);
+    game.slapPile(player1);
   }
   if (event.keyCode === 74) {
-    game.slapPile(game.player2);
+    game.slapPile(player2);
+  }
+  updateDisplay();
+}
+
+function updateDisplay() {
+  var currentPlayer = game.currentPlayer ? game.player1 : game.player2;
+  var opponent = game.currentPlayer ? game.player2 : game.player1;
+  changeHeader(game.header, currentPlayer, opponent);
+  hideHand();
+  var winner = currentPlayer.hand.length === 52 ? currentPlayer : opponent;
+  if (game.header === "win") {
+    updatePlayerWinsText(winner);
+    setTimeout(changeHeader, 500);
+    setTimeout(game.resetGame, 500);
   }
 }
 
@@ -29,14 +43,17 @@ function changeTopCard(playedCard) {
 }
 
 function hideHand() {
-  if (game.player1.hand.length === 0) {
-    document.querySelector(`.p1-hand`).classList.add("hidden");
-  }
-  if (game.player2.hand.length === 0) {
-    document.querySelector(`.p2-hand`).classList.add("hidden");
-  } else {
-    document.querySelector(`.p1-hand`).classList.remove("hidden");
-    document.querySelector(`.p2-hand`).classList.remove("hidden");
+  var centerPile = document.querySelector(".center-pile");
+  var p1Hand = document.querySelector(`.p1-hand`);
+  var p2Hand = document.querySelector(`.p2-hand`);
+  var decksHTML = [centerPile, p1Hand, p2Hand];
+  var decks = [game.centerPile, game.player1.hand, game.player2.hand];
+  for (var i = 0; i < decks.length; i++) {
+    if (decks[i].length === 0) {
+      decksHTML[i].classList.add("hidden");
+    } else {
+      decksHTML[i].classList.remove("hidden");
+    }
   }
 }
 

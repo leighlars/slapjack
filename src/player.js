@@ -10,7 +10,6 @@ class Player {
     game.centerPile.push(playedCard);
     changeTopCard(playedCard);
     game.playerTurn();
-    hideHand();
   }
 
   saveWinsToStorage() {
