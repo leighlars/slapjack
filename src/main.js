@@ -40,7 +40,7 @@ function hideHand() {
   }
 }
 
-function changeHeader(condition, winningPlayer) {
+function changeHeader(condition, winningPlayer, losingPlayer) {
   var header = document.querySelector("header");
   if (condition === "win") {
       header.innerText = `Player ${winningPlayer.id} wins!`;
@@ -56,7 +56,7 @@ function changeHeader(condition, winningPlayer) {
       header.innerText = `DOUBLE! Player ${winningPlayer.id} takes the pile!`;
   }
   else if (condition === "badSlap") {
-      header.innerText = `BAD SLAP! Player ${winningPlayer.id} forfeits a card to Player ${otherPlayer}!`;
+      header.innerText = `BAD SLAP! Player ${losingPlayer.id} forfeits a card to Player ${winningPlayer.id}!`;
   }
 }
 

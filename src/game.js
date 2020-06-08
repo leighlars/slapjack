@@ -47,12 +47,25 @@ class Game {
       this.winTurn();
       changeHeader("double");
     }
-    // } else {
-    //   // var lostCard = `this..hand.unshift()`;
-    //   // other player's hand.push(lostCard);
-    //   changeHeader("badSlap");
-    // //   // there will be issues with winTurn and slapPile bc it's not based on keyboard event
-    // }
+  } else {
+    this.checkBadSlap();
+  }
+     // there will be issues with
+     // winTurn, slapPile, checkBadSlap
+    // bc it's not based on keyboard event/currentPlayer
+}
+
+
+  checkBadSlap() {
+    // if (currentPlayer) {
+      var lostCard = this.player1.hand.unshift();
+      player2.hand.push(lostCard);
+      changeHeader("badSlap");
+    // } else if (!currentPlayer) {
+      var lostCard = this.player2.hand.unshift();
+      player1.hand.push(lostCard);
+      changeHeader("badSlap");
+    }
   }
 
   checkSlapJack() {
