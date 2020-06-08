@@ -8,7 +8,6 @@ class Game {
     this.header = "";
   }
 
-// general play
   shuffleCards(cardPile) {
     for (var i = cardPile.length -1; i > 0; i--) {
       var randomIndex = Math.floor(Math.random() * i)
@@ -28,7 +27,6 @@ class Game {
     this.currentPlayer = !this.currentPlayer;
   }
 
-// check slap conditions
   slapPile(player) {
     var topCard = this.centerPile[0];
     var secondCard = this.centerPile[1];
@@ -62,7 +60,6 @@ class Game {
     this.header = "badSlap";
   }
 
-// check win conditions
   gameWinSlap() {
     if (this.currentPlayer === true) {
       this.currentPlayer === true;
@@ -85,7 +82,6 @@ class Game {
 // turn off currentPlayer switching,
 // if player w cards deals all cards and none are jack, thatPlayer.hand.push(this.centerPile);
 
-// end game
   gameOver(winner) {
     winner.wins.push(game);
     winner.saveWinsToStorage();
