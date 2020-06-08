@@ -62,6 +62,12 @@ class Game {
 
 // check win conditions
   gameWinSlap() {
+    if (this.currentPlayer === true) {
+      this.currentPlayer === true;
+    }
+    if (this.currentPlayer === false) {
+      this.currentPlayer === false;
+    }
     var losingPlayer = players.find(player => player.hand.length === 0);
     var winningPlayer = players.find(player => player.hand.length != 0);
     var topCard = this.centerPile[this.centerPile.length - 1];
@@ -70,10 +76,14 @@ class Game {
           // ^^ find which player
         this.gameOver(winningPlayer);
     }
-    if (jacks.includes(topCard) && losingPlayer.slapPile()) {
+    if (topCard.value === "jack" && losingPlayer.slapPile()) {
       this.winTurn();
     }
   }
+
+// turn off currentPlayer switching,
+// if player w cards deals all cards and none are jack, thatPlayer.hand.push(this.centerPile);
+
 
 // end game
   gameOver(winner) {
