@@ -23,18 +23,19 @@ function keyHandler(event) {
     slapper = game.player2;
   }
   updateDisplay(slapper);
-  // heaeder lasts for half a second
+  // header lasts for half a second
 }
 
 function updateDisplay(slapper) {
+  hideCards();
   if (slapper) {
     var opponent = slapper.id === 1 ? game.player2 : game.player1;
     changeHeader(game.header, slapper);
-    hideCards();
     var winner = slapper.hand.length === 52 ? slapper : opponent;
   }
   if (game.header === "win") {
     updatePlayerWinsText(winner);
+    // should this be outside of for loop?
   }
 }
 
