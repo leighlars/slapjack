@@ -41,7 +41,7 @@ function changeTopCard() {
   var topCard = document.querySelector(".center-pile");
   topCard.classList.remove("hidden");
   topCard.style.backgroundImage = `url(${playedCard.src})`;
-  game.currentPlayer ? topCard.classList.remove("p2") : topCard.classList.add("p2");
+  game.currentPlayer ? topCard.classList.add("p2") : topCard.classList.remove("p2");
 }
 
 function hideCards() {
