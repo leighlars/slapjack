@@ -64,8 +64,7 @@ class Game {
   gameWinSlap() {
     if (this.currentPlayer === true) {
       this.currentPlayer === true;
-    }
-    if (this.currentPlayer === false) {
+    } else {
       this.currentPlayer === false;
     }
     var losingPlayer = players.find(player => player.hand.length === 0);
@@ -77,7 +76,7 @@ class Game {
         this.gameOver(winningPlayer);
     }
     if (topCard.value === "jack" && losingPlayer.slapPile()) {
-      this.winTurn();
+      this.winTurn(losingPlayer);
     }
   }
 
