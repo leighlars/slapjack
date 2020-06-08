@@ -28,17 +28,18 @@ class Game {
   }
 
 // check slap conditions
-  slapPile() {
+  slapPile(player) {
     var topCard = this.centerPile[this.centerPile.length - 1];
     var secondCard = this.centerPile[this.centerPile.length - 2];
     var thirdCard = this.centerPile[this.centerPile.length - 3];
+    debugger;
     this.checkSlapJack();
     if (topCard.value === secondCard.value) {
       this.winTurn();
-      changeHeader("double", winningPlayer);
+      changeHeader("double", player);
     } if (topCard.value === thirdCard.value) {
       this.winTurn();
-      changeHeader("sandwich", winningPlayer);
+      changeHeader("sandwich", player);
     } else {
       this.checkBadSlap();
     }
@@ -54,13 +55,13 @@ class Game {
     this.shuffleCards(player.hand);
   }
 
-  checkBadSlap() {
-    if (currentPlayer) {
+  checkBadSlap(player) {
+    if (player1) {
       var lostCard = this.player1.hand.unshift();
       player2.hand.push(lostCard);
       changeHeader("badSlap", this.player2, this.player1);
     }
-    if (!currentPlayer) {
+    if (player2) {
       var lostCard = this.player2.hand.unshift();
       player1.hand.push(lostCard);
       changeHeader("badSlap", this.player1, this.player2);
@@ -85,8 +86,8 @@ class Game {
     var winningPlayer = players.find(player => player.hand.length != 0);
     var topCard = this.centerPile[this.centerPile.length - 1];
     var jacks = [cards[0], cards[1], cards[2], cards[3]];
-    if ((jacks.includes(topCard) && winningPlayer.slapPile()) ||
-        (!jacks.includes(topCard) && losingPlayer.slapPile())) {
+    if ((jacks.includes(topCard) && winningPlayer.slapPile ||
+        (!jacks.includes(topCard) && losingPlayer.slapPile) {
           // ^^ find which player
         this.gameOver(winningPlayer);
     }

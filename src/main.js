@@ -7,19 +7,18 @@ window.onload = game.deal();
 document.addEventListener("keydown", keyHandler);
 
 function keyHandler(event) {
-  if (event.keyCode === 81) {
+  if (event.keyCode === 81 && game.currentPlayer === true) {
     player1.playCard();
   }
-  if (event.keyCode === 80) {
+  if (event.keyCode === 80 && game.currentPlayer === false) {
     player2.playCard();
   }
   if (event.keyCode === 70) {
-    // game.slapPile();
+    game.slapPile(game.player1);
   }
   if (event.keyCode === 74) {
-    // game.slapPile();
+    game.slapPile(game.player2);
   }
-  // how to stop another player from going?
 }
 
 function changeTopCard(playedCard) {
