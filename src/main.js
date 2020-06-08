@@ -25,7 +25,6 @@ function keyHandler(event) {
     slapper = game.player2;
   }
   updateDisplay(slapper);
-  // header lasts for half a second
 }
 
 function updateDisplay(slapper) {
@@ -34,10 +33,9 @@ function updateDisplay(slapper) {
     var opponent = slapper.id === 1 ? game.player2 : game.player1;
     changeHeader(game.header, slapper);
     var winner = slapper.hand.length === 52 ? slapper : opponent;
-  }
-  if (game.header === "win") {
-    updatePlayerWinsText(winner);
-    // should this be outside of for loop?
+    if (game.header === "win") {
+      updatePlayerWinsText(winner);
+    }
   }
 }
 
@@ -60,7 +58,6 @@ function hideCards() {
       decksHTML[i].classList.add("hidden");
     } else {
       decksHTML[i].classList.remove("hidden");
-      // ^^ not hiding empty hands
     }
   }
 }
