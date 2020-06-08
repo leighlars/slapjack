@@ -19,6 +19,7 @@ function keyHandler(event) {
   if (event.keyCode === 74) {
     // game.slapPile();
   }
+  // how to stop another player from going?
 }
 
 function changeTopCard(playedCard) {
