@@ -45,8 +45,7 @@ class Game {
       this.gameWinSlap();
      // there will be issues with
      // winTurn, slapPile, checkBadSlap
-    // bc it's not based on keyboard event/currentPlayer, and bc file paths
-    // will never equal
+    // bc it's not based on keyboard event/currentPlayer
   }
 
   winTurn() {
