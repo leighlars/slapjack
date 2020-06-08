@@ -3,7 +3,6 @@ var game = new Game();
 window.onload = game.deal();
 // window.onload = player.retrieveWinsFromStorage();
 document.addEventListener("keydown", keyHandler);
-// document.addEventListener("keyup", updateDisplay);
 
 function keyHandler(event) {
   var slapper = null;
@@ -22,7 +21,6 @@ function keyHandler(event) {
   if (event.key === "j") {
     game.slapPile(game.player2);
     slapper = game.player2;
-
   }
   updateDisplay(slapper);
 }
@@ -34,11 +32,9 @@ function updateDisplay(slapper) {
     hideCards();
     var winner = slapper.hand.length === 52 ? slapper : opponent;
   }
-  // if (game.header === "win") {
-//     updatePlayerWinsText(winner);
-//     setTimeout(changeHeader, 500);
-//     setTimeout(game.resetGame, 500);
-//   }
+  if (game.header === "win") {
+    updatePlayerWinsText(winner);
+  }
 }
 
 function changeTopCard() {

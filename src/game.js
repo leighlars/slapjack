@@ -33,7 +33,9 @@ class Game {
     var topCard = this.centerPile[this.centerPile.length - 1];
     var secondCard = this.centerPile[this.centerPile.length - 2];
     var thirdCard = this.centerPile[this.centerPile.length - 3];
-    if (topCard && "jack" === topCard.value) {
+    if (this.player1.hand.length === 0 || this.player2.hand.length === 0) {
+      gameWinSlap();
+    } else if (topCard && "jack" === topCard.value) {
       this.winTurn(player, "slapjack");
     } else if (topCard && secondCard && topCard.value === secondCard.value) {
       this.winTurn(player, "double");
@@ -45,9 +47,7 @@ class Game {
   }
 
   winTurn(player, header) {
-    for (var i = 0; i < this.centerPile.length; i++) {
-      player.hand.push(this.centerPile[i]);
-    }
+    player.hand.concat(this.centerPile);
     this.centerPile = [];
     this.shuffleCards(player.hand);
     this.header = header;
@@ -61,36 +61,33 @@ class Game {
   }
 
 // check win conditions
-  gameWinSlap() {
-    if (this.currentPlayer === true) {
-      this.currentPlayer === true;
-    } else {
-      this.currentPlayer === false;
-    }
-    var losingPlayer = players.find(player => player.hand.length === 0);
-    var winningPlayer = players.find(player => player.hand.length != 0);
-    var topCard = this.centerPile[this.centerPile.length - 1];
-    if ((topCard.value === "jack" && winningPlayer.slapPile) ||
-        (topCard.value != "jack") && losingPlayer.slapPile) {
-          // ^^ find which player
-        this.gameOver(winningPlayer);
-    }
-    if (topCard.value === "jack" && losingPlayer.slapPile()) {
-      this.winTurn(losingPlayer);
-    }
-  }
+  // gameWinSlap() {
+  //   if (this.currentPlayer === true) {
+  //     this.currentPlayer === true;
+  //   } else {
+  //     this.currentPlayer === false;
+  //   }
+  //   var players = [this.player1, this.player2];
+  //   var losingPlayer = players.find(player => player.hand.length === 0);
+  //   var winningPlayer = players.find(player => player.hand.length != 0);
+  //   var topCard = this.centerPile[this.centerPile.length - 1];
+  //   if ((topCard.value === "jack" && winningPlayer.slapPile) ||
+  //       (topCard.value != "jack") && losingPlayer.slapPile) {
+  //         // ^^ find which player is slapping
+  //       this.gameOver(winningPlayer);
+  //   }
+  //   if (topCard.value === "jack" && ) {
+  //     this.winTurn(losingPlayer);
+  //   }
+  // }
 
 // turn off currentPlayer switching,
 // if player w cards deals all cards and none are jack, thatPlayer.hand.push(this.centerPile);
-
 
 // end game
   gameOver(winner) {
     winner.wins.push(game);
     winner.saveWinsToStorage();
-  }
-
-  resetGame() {
     this.player1.hand.length === 0;
     this.player2.hand.length === 0;
     this.deal();
