@@ -47,7 +47,9 @@ class Game {
   }
 
   winTurn(player, header) {
-    player.hand.concat(this.centerPile);
+    for (var i = 0; i < this.centerPile.length; i++) {
+      player.hand.push(this.centerPile[i]);
+    }
     this.centerPile = [];
     this.shuffleCards(player.hand);
     this.header = header;
@@ -61,25 +63,24 @@ class Game {
   }
 
 // check win conditions
-  // gameWinSlap() {
-  //   if (this.currentPlayer === true) {
-  //     this.currentPlayer === true;
-  //   } else {
-  //     this.currentPlayer === false;
-  //   }
-  //   var players = [this.player1, this.player2];
-  //   var losingPlayer = players.find(player => player.hand.length === 0);
-  //   var winningPlayer = players.find(player => player.hand.length != 0);
-  //   var topCard = this.centerPile[this.centerPile.length - 1];
-  //   if ((topCard.value === "jack" && winningPlayer.slapPile) ||
-  //       (topCard.value != "jack") && losingPlayer.slapPile) {
-  //         // ^^ find which player is slapping
-  //       this.gameOver(winningPlayer);
-  //   }
-  //   if (topCard.value === "jack" && ) {
-  //     this.winTurn(losingPlayer);
-  //   }
-  // }
+  gameWinSlap() {
+    if (this.currentPlayer === true) {
+      this.currentPlayer === true;
+    } else {
+      this.currentPlayer === false;
+    }
+    var winningPlayer = this.currentPlayer ? this.player1 : this.player2;
+    var losingPlayer = this.currentPlayer ? this.player2 : this.player1;
+    var topCard = this.centerPile[this.centerPile.length - 1];
+    if ((topCard.value === "jack" && winningPlayer.slapPile) ||
+        (topCard.value != "jack") && losingPlayer.slapPile) {
+          // ^^ find which player is slapping
+        this.gameOver(winningPlayer);
+    } else if (topCard.value === "jack" && losingPlayer.slapPile) {
+      this.winTurn(losingPlayer);
+    }
+    // } else if ()
+  }
 
 // turn off currentPlayer switching,
 // if player w cards deals all cards and none are jack, thatPlayer.hand.push(this.centerPile);

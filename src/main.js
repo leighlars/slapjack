@@ -57,6 +57,7 @@ function hideCards() {
       decksHTML[i].classList.add("hidden");
     } else {
       decksHTML[i].classList.remove("hidden");
+      // ^^ not hiding empty hands
     }
   }
 }
