@@ -52,7 +52,8 @@ class Game {
     }
      // there will be issues with
      // winTurn, slapPile, checkBadSlap
-    // bc it's not based on keyboard event/currentPlayer
+    // bc it's not based on keyboard event/currentPlayer, and bc file paths
+    // will never equal
   }
 
   checkBadSlap() {
