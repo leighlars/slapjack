@@ -7,12 +7,12 @@ document.addEventListener("keydown", keyHandler);
 function keyHandler(event) {
   var slapper = null;
   if (event.key === "q" && game.currentPlayer === true) {
-    document.querySelector("header").innerText = "";
+    document.querySelector("h1").innerText = "";
     game.player1.playCard();
     changeTopCard();
   }
   if (event.key === "p" && game.currentPlayer === false) {
-    document.querySelector("header").innerText = "";
+    document.querySelector("h1").innerText = "";
     game.player2.playCard();
     changeTopCard();
   }
@@ -66,7 +66,8 @@ function hideCards() {
 }
 
 function changeHeader(condition, slapper) {
-  var header = document.querySelector("header");
+  var header = document.querySelector("h1");
+  header.classList.add("gameplay");
   if (condition === "win") {
     header.innerText = `Player ${slapper.id} wins!`;
     updatePlayerWinsText(slapper);
