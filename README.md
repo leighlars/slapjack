@@ -66,9 +66,9 @@ My estimated schedule is as follows:
 
 6/5: Created functionality for the following items: key handler to handle all key controls, reset game, change header on DOM based on gameplay, slap conditions, and deal() onload listener. I modified the deck compiler method to get arrays of each type of  and deal method for each player to get equal cards on load. I modified names in HTML, CSS, and in JS files for specificity. I cleaned up HTML for screen readers. I added a CSS class to style the central pile border shadow based on the player who added the card in that turn.
 
-6/6:
+6/6: I added the card images as an array to a separate data file and then connected the array throughout the JS files for card play on the DOM. I refactored many functions and addressed some bugs, but am continuing to have a an issue changing the centerPile deck to display the playedCard. I also am having a bug issue figuring out the logic of a bad slap. 
 
-6/7:
+6/7: 
 
 ## Gameplay Video
 
