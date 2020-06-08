@@ -45,7 +45,6 @@ class Game {
   }
 
   winTurn(player, header) {
-    console.log("made it");
     for (var i = 0; i < this.centerPile.length; i++) {
       player.hand.push(this.centerPile[i]);
     }
@@ -56,8 +55,8 @@ class Game {
 
   badSlap(player) {
     var opponent = player.id === 1 ? this.player2 : this.player1;
-    var lostCard = player.hand.unshift();
-    opponent.hand.push(lostCard);
+    var lostCard = player.hand.pop();
+    opponent.hand.unshift(lostCard);
     this.header = "badSlap";
   }
 
