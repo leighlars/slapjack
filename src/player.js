@@ -3,6 +3,7 @@ class Player {
     this.id = id;
     this.wins = 0;
     this.hand = [];
+    this.retrieveWinsFromStorage();
   }
 
   playCard() {
@@ -19,7 +20,7 @@ class Player {
 
  retrieveWinsFromStorage() {
    this.wins = JSON.parse(localStorage.getItem(`player-${this.id}-wins`)) || [];
-   // updatePlayerWinsText(this);
+   updatePlayerWinsText(this);
  }
 
 

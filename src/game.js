@@ -45,9 +45,7 @@ class Game {
   }
 
   winTurn(player, header) {
-    for (var i = 0; i < this.centerPile.length; i++) {
-      player.hand.push(this.centerPile[i]);
-    }
+    player.hand = player.hand.concat(this.centerPile);
     this.centerPile = [];
     this.shuffleCards(player.hand);
     this.header = header;
@@ -76,7 +74,7 @@ class Game {
     } else if (topCard.value === "jack" && losingPlayer.slapPile) {
       this.winTurn(losingPlayer);
     }
-    // } else if ()
+     // else if (winningPlayer.hand.length)
   }
 
 // turn off currentPlayer switching,
