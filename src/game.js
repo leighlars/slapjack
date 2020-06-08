@@ -39,17 +39,16 @@ class Game {
     var secondCard = this.centerPile[this.centerPile.length - 2];
     var thirdCard = this.centerPile[this.centerPile.length - 3];
     this.checkSlapJack();
-    if (topCard === secondCard) {
+    if (topCard.value === secondCard.value) {
       this.winTurn();
       changeHeader("double", winningPlayer);
-    } if (topCard === thirdCard) {
+    } if (topCard.value === thirdCard.value) {
       this.winTurn();
       changeHeader("sandwich", winningPlayer);
     } else {
       this.checkBadSlap();
-    } else {
-      this.gameWinSlap();
     }
+      this.gameWinSlap();
      // there will be issues with
      // winTurn, slapPile, checkBadSlap
     // bc it's not based on keyboard event/currentPlayer, and bc file paths
@@ -72,9 +71,11 @@ class Game {
   checkSlapJack() {
     var topCard = this.centerPile[this.centerPile.length - 1];
     var jacks = [cards[0], cards[1], cards[2], cards[3]];
-    if (jacks.includes(topCard)) {
-      this.winTurn();
-      changeHeader("slapjack", player, player);
+    for (var i = 0; i < jacks.length; i++) {
+      if (jacks[i].value === topCard.value) {
+        this.winTurn();
+        changeHeader("slapjack", player, player);
+      }
     }
   }
 
