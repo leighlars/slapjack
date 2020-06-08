@@ -68,7 +68,11 @@ My estimated schedule is as follows:
 
 6/6: I added the card images as an array to a separate data file and then connected the array throughout the JS files for card play on the DOM. I refactored many functions and addressed some bugs, but am continuing to have a an issue changing the centerPile deck to display the playedCard. I also am having a bug issue figuring out the logic of a bad slap. 
 
-6/7: 
+6/7: I deleted a redundant function checkEmptyHand() and added a function to display/hide the hand depending on if the hand is empty. The bugs from yesterday are still present and I aim for those to be resolved in the next day. 
+
+6/8:
+
+6/9: 
 
 ## Gameplay Video
 
