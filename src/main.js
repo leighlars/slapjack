@@ -9,9 +9,11 @@ document.addEventListener("keydown", keyHandler);
 function keyHandler(event) {
   if (event.keyCode === 81 && game.currentPlayer === true) {
     player1.playCard();
+    changeTopCard();
   }
   if (event.keyCode === 80 && game.currentPlayer === false) {
     player2.playCard();
+    changeTopCard();
   }
   if (event.keyCode === 70) {
     game.slapPile(player1);
@@ -35,7 +37,8 @@ function updateDisplay() {
   }
 }
 
-function changeTopCard(playedCard) {
+function changeTopCard() {
+  var playedCard = game.centerPile[game.centerPile.length - 1];
   var topCard = document.querySelector(".center-pile");
   topCard.classList.remove("hidden");
   topCard.style.backgroundImage = `url(${playedCard.src})`;

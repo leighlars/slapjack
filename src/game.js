@@ -82,9 +82,8 @@ class Game {
     var losingPlayer = players.find(player => player.hand.length === 0);
     var winningPlayer = players.find(player => player.hand.length != 0);
     var topCard = this.centerPile[this.centerPile.length - 1];
-    var jacks = [cards[0], cards[1], cards[2], cards[3]];
-    if ((jacks.includes(topCard) && winningPlayer.slapPile) ||
-        (!jacks.includes(topCard) && losingPlayer.slapPile)) {
+    if ((topCard.value === "jack" && winningPlayer.slapPile) ||
+        (topCard.value != "jack") && losingPlayer.slapPile) {
           // ^^ find which player
         this.gameOver(winningPlayer);
     }
