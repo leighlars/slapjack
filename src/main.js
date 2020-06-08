@@ -6,21 +6,21 @@ document.addEventListener("keydown", keyHandler);
 // document.addEventListener("keyup", updateDisplay);
 
 function keyHandler(event) {
-  if (event.keyCode === 81 && game.currentPlayer === true) {
+  if (event.key === "q" && game.currentPlayer === true) {
     game.player1.playCard();
     changeTopCard();
   }
-  if (event.keyCode === 80 && game.currentPlayer === false) {
+  if (event.key === "p" && game.currentPlayer === false) {
     game.player2.playCard();
     changeTopCard();
   }
-  if (event.keyCode === 70) {
+  if (event.key === "f") {
     game.slapPile(game.player1);
   }
-  if (event.keyCode === 74) {
+  if (event.key === "j") {
     game.slapPile(game.player2);
   }
-  setTimeout(updateDisplay, 1000);
+  updateDisplay();
 }
 
 function updateDisplay() {
@@ -62,20 +62,16 @@ function hideCards() {
 function changeHeader(condition, winningPlayer, losingPlayer) {
   var header = document.querySelector("header");
   if (condition === "win") {
-      header.innerText = `Player ${winningPlayer.id} wins!`;
-      updatePlayerWinsText(winningPlayer);
-  }
-  else if (condition === "slapjack") {
-      header.innerText = `SLAPJACK! Player ${winningPlayer.id} takes the pile!`;
-  }
-  else if (condition === "sandwich") {
-      header.innerText = `SANDWICH! Player ${winningPlayer.id} takes the pile!`;
-  }
-  else if (condition === "double") {
-      header.innerText = `DOUBLE! Player ${winningPlayer.id} takes the pile!`;
-  }
-  else if (condition === "badSlap") {
-      header.innerText = `BAD SLAP! Player ${losingPlayer.id} forfeits a card to Player ${winningPlayer.id}!`;
+    header.innerText = `Player ${winningPlayer.id} wins!`;
+    updatePlayerWinsText(winningPlayer);
+  } else if (condition === "slapjack") {
+    header.innerText = `SLAPJACK! Player ${winningPlayer.id} takes the pile!`;
+  } else if (condition === "sandwich") {
+    header.innerText = `SANDWICH! Player ${winningPlayer.id} takes the pile!`;
+  } else if (condition === "double") {
+    header.innerText = `DOUBLE! Player ${winningPlayer.id} takes the pile!`;
+  } else if (condition === "badSlap") {
+    header.innerText = `BAD SLAP! Player ${losingPlayer.id} forfeits a card to Player ${winningPlayer.id}!`;
   }
 }
 
