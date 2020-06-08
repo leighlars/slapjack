@@ -11,6 +11,7 @@ class Player {
     changeTopCard(playedCard);
     game.checkEmptyHand();
     game.playerTurn();
+    hideHand();
   }
 
   saveWinsToStorage() {

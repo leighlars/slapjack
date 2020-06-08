@@ -29,9 +29,9 @@ class Game {
 
 // check slap conditions
   winTurn() {
-    this.currentPlayer.hand.push(this.centerPile);
-    this.shuffleCards(this.currentPlayer.hand);
-    // isn't currentPlayer a boolean value?
+    var player = this.currentPlayer ? this.player1 : this.player2;
+    player.hand.push(this.centerPile);
+    this.shuffleCards(player.hand);
   }
 
   slapPile() {
@@ -39,18 +39,18 @@ class Game {
     var secondCard = this.centerPile[this.centerPile.length - 2];
     var thirdCard = this.centerPile[this.centerPile.length - 3];
     checkSlapJack();
-    if (topCard === secondCard || topCard === thirdCard) {
+    if (topCard === secondCard) {
       this.winTurn();
-      // 3 if statements ?
-      changeHeader("slapjack");
       changeHeader("sandwich");
+    } if (topCard === thirdCard) {
+      this.winTurn();
       changeHeader("double");
     }
     // } else {
     //   // var lostCard = `this..hand.unshift()`;
     //   // other player's hand.push(lostCard);
     //   changeHeader("badSlap");
-    //   // there will be issues with winTurn and slapPile bc it's not based on keyboard event
+    // //   // there will be issues with winTurn and slapPile bc it's not based on keyboard event
     // }
   }
 
@@ -72,13 +72,15 @@ class Game {
   }
 
   gameWinSlap(winningPlayer, losingPlayer) {
-    var topCard = document.querySelector(".center-pile");
-    if ((topCard === 11 && winningPlayer.slapPile()) ||
-        (topCard != 11 && losingPlayer.slapPile())) {
+    var topCard = this.centerPile[this.centerPile.length - 1];
+    var jacks = [cards[0], cards[1], cards[2], cards[3]];
+    if ((jacks.includes(topCard) && winningPlayer.slapPile()) ||
+        (!jacks.includes(topCard) && losingPlayer.slapPile())) {
         this.gameOver(winningPlayer);
     }
-    if (topCard === 11 && losingPlayer.slapPile()) {
+    if (jacks.includes(topCard) && losingPlayer.slapPile()) {
       this.winTurn();
+      hideHand();
     }
   }
 

@@ -30,10 +30,13 @@ function changeTopCard(playedCard) {
 
 function hideHand() {
   if (game.player1.hand.length === 0) {
-    document.querySelector(`.p1-hand`).add("hidden");
+    document.querySelector(`.p1-hand`).classList.add("hidden");
   }
   if (game.player2.hand.length === 0) {
-    document.querySelector(`.p2-hand`).add("hidden");
+    document.querySelector(`.p2-hand`).classList.add("hidden");
+  } else {
+    document.querySelector(`.p1-hand`).classList.remove("hidden");
+    document.querySelector(`.p2-hand`).classList.remove("hidden");
   }
 }
 
