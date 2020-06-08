@@ -9,7 +9,6 @@ class Player {
     var playedCard = game.currentPlayer ? game.player1.hand.pop() : game.player2.hand.pop();
     game.centerPile.push(playedCard);
     changeTopCard(playedCard);
-    game.checkEmptyHand();
     game.playerTurn();
     hideHand();
   }

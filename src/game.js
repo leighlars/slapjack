@@ -38,7 +38,8 @@ class Game {
     var topCard = this.centerPile[this.centerPile.length - 1];
     var secondCard = this.centerPile[this.centerPile.length - 2];
     var thirdCard = this.centerPile[this.centerPile.length - 3];
-    checkSlapJack();
+    debugger;
+    this.checkSlapJack();
     if (topCard === secondCard) {
       this.winTurn();
       changeHeader("sandwich");
@@ -64,14 +65,9 @@ class Game {
   }
 
 // check win conditions
-  checkEmptyHand() {
-    var players = [this.player1, this.player2];
+  gameWinSlap(winningPlayer, losingPlayer) {
     var losingPlayer = players.find(player => player.hand.length === 0);
     var winningPlayer = players.find(player => player.hand.length != 0);
-    // need to have losingPlayer and winningPlayer appear in gameWinSlap
-  }
-
-  gameWinSlap(winningPlayer, losingPlayer) {
     var topCard = this.centerPile[this.centerPile.length - 1];
     var jacks = [cards[0], cards[1], cards[2], cards[3]];
     if ((jacks.includes(topCard) && winningPlayer.slapPile()) ||

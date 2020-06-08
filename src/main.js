@@ -14,10 +14,10 @@ function keyHandler(event) {
     player2.playCard();
   }
   if (event.keyCode === 70) {
-    player1.slapPile();
+    game.slapPile();
   }
   if (event.keyCode === 74) {
-    // player2.slapPile();
+    game.slapPile();
   }
 }
 
