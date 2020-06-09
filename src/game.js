@@ -67,6 +67,7 @@ class Game {
     if (winnerSlaps || loserSlapsWrong) {
       this.header = "win";
       this.gameOver(winningPlayer);
+      // if loser slaps, the winner should win
     } else if (!loserSlapsWrong || !winnerSlaps) {
       this.winTurn(losingPlayer);
     }
@@ -80,5 +81,4 @@ class Game {
     this.centerPile.length = 0;
     this.deal();
   }
-
 }
