@@ -84,4 +84,4 @@ My estimated schedule is as follows:
 
 ## Reflection
 
-- If I were to do this project all over again, I would include a drop down section or pop-up window that listed the game conditions. I would also add more header conditions in the sudden death mode to display "sudden death" and "normal game resumes". 
+If I were to do this project all over again, I would include a drop down section or pop-up window that listed the game conditions. I would also add more header conditions in the sudden death mode to display "sudden death" and "normal game resumes". 
