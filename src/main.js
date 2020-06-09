@@ -76,6 +76,7 @@ function changeHeader(condition, slapper) {
   header.classList.add("gameplay");
   if (condition === "win") {
     header.innerText = `Player ${slapper.id} wins!`;
+    // if loser slaps, the winner should win
     updatePlayerWinsText(slapper);
   } else if (condition === "slapjack") {
     header.innerText = `SLAPJACK! Player ${slapper.id} takes the pile!`;
