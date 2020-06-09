@@ -38,6 +38,11 @@ My estimated schedule is as follows:
 - p to deal a card
 - j to slap
 
+**Deck**
+- 52 cards
+- No wild card
+- 4 suits of 13 cards (Ace=1 through King=13)
+
 **Instructions**
 
 - Players alternate turns playing cards face-up into the central pile (ex a player can’t deal twice in a row)
@@ -48,13 +53,10 @@ My estimated schedule is as follows:
 - C) Or if a player slaps when a Sandwich (two cards of the same number - such as two Aces, or two Fives, or two Queens, separated by a different card in the middle) is on top of the central pile.
 - Otherwise, the player who slapped loses the card on top of their hand and it is added to the bottom of their opponent’s hand.
 - **If one player loses all their cards, they have one chance to not lose and continue the game:**
-- The player with cards left continues to deal from their hand into the central pile (they are now allowed to deal multiple times in a row!)
-- If the player with cards left deals all their cards into the center without revealing a Jack, the central pile returns to that player’s hand, is shuffled, and the player must continue to deal until a Jack is revealed
-- When a Jack is revealed, the player who is out of cards can slap it. The central pile is then their new hand, the game continues as normal.
-- If however, the player who is out of cards slaps something that is not a Jack, or if the player who still has cards slaps the Jack first, then the player who is out of cards loses and the game is over!
-- Doubles and Sandwiches are not valid when one player is completely out of cards - in this case, only a Jack can save them!
-- The only way the player who still has cards can win is by slapping the Jack before the player without cards left.
-
+- The player with cards left continues to deal from their hand into the central pile (they are now allowed to deal multiple times in a row!). If the player with cards left deals all their cards into the center without revealing a Jack, the central pile returns to that player’s hand, is shuffled, and the player must continue to deal until a Jack is revealed
+- Sandwiches and doubles no longer count. 
+- If the player with cards slaps on a jack, or player with no cards slaps on a non-jack, the player with cards wins and it's game over. 
+- If the player without cards slaps on a jack, or the player with cards slaps on a non-jack, the central pile goes to the player without cards, and the game resumes as normal.
 
 ## Progression
 
