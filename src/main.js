@@ -24,7 +24,6 @@ function keyHandler(event) {
     slapper = game.player2;
   }
   updateDisplay(slapper);
-  console.log(game.currentPlayer);
 }
 
 function gameplayDOM(player) {

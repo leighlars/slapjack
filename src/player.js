@@ -1,32 +1,30 @@
 class Player {
   constructor(id) {
     this.id = id;
-    this.wins = this.retrieveWinsFromStorage();
+    this.wins = JSON.parse(localStorage.getItem(`player-${this.id}-wins`)) || 0;
     this.hand = [];
   }
 
   playCard() {
+    var player = game.currentPlayer ? game.player1 : game.player2;
     if (game.player1.hand.length === 0 || game.player2.hand.length === 0) {
-      var playedCard = game.currentPlayer ? game.player1.hand.pop() : game.player2.hand.pop();
-      game.centerPile.unshift(playedCard);
+      this.addToCardPile(player);
     } else {
-      var playedCard = game.currentPlayer ? game.player1.hand.pop() : game.player2.hand.pop();
-      game.centerPile.unshift(playedCard);
+      this.addToCardPile(player);
       game.playerTurn();
     }
     if (game.player1.hand.length === 0 && game.player2.hand.length === 0) {
-      var player = game.currentPlayer ? game.player1 : game.player2;
       game.winTurn(player);
     }
+  }
+
+  addToCardPile(player) {
+    var playedCard = player.hand.pop();
+    game.centerPile.unshift(playedCard);
   }
 
   saveWinsToStorage() {
    localStorage.setItem(`player-${this.id}-wins`, JSON.stringify(this.wins));
   }
-
- retrieveWinsFromStorage() {
-   console.log(JSON.parse(localStorage.getItem(`player-${this.id}-wins`)));
-   return JSON.parse(localStorage.getItem(`player-${this.id}-wins`)) || 0;
- }
 
 }
