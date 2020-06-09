@@ -1,7 +1,8 @@
 var game = new Game();
 
 window.onload = game.deal();
-// window.onload = player.retrieveWinsFromStorage();
+window.onload = updatePlayerWinsText(game.player1);
+window.onload = updatePlayerWinsText(game.player2);
 document.addEventListener("keydown", keyHandler);
 
 function keyHandler(event) {
@@ -23,13 +24,12 @@ function keyHandler(event) {
     slapper = game.player2;
   }
   updateDisplay(slapper);
+  console.log(game.currentPlayer);
 }
 
 function gameplayDOM(player) {
   document.querySelector("h1").innerText = "";
-  if (player.hand.length != 0) {
-    changeTopCard();
-  }
+  changeTopCard();
 }
 
 function updateDisplay(slapper) {
@@ -45,10 +45,12 @@ function updateDisplay(slapper) {
 }
 
 function changeTopCard() {
-  var playedCard = game.centerPile[0];
   var topCard = document.querySelector(".center-pile");
-  topCard.classList.remove("hidden");
-  topCard.style.backgroundImage = `url(${playedCard.src})`;
+  if (game.centerPile.length > 0) {
+    var playedCard = game.centerPile[0];
+    topCard.classList.remove("hidden");
+    topCard.style.backgroundImage = `url(${playedCard.src})`;
+  }
   game.currentPlayer ? topCard.classList.add("p2") : topCard.classList.remove("p2");
 }
 
@@ -87,5 +89,5 @@ function changeHeader(condition, slapper) {
 
 function updatePlayerWinsText(winningPlayer) {
   var playerWins = document.querySelector(`.p${winningPlayer.id}-text`);
-  playerWins.innerText = `${winningPlayer.wins.length} wins`;
+  playerWins.innerText = `${winningPlayer.wins} wins`;
 }

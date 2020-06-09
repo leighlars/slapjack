@@ -73,8 +73,8 @@ class Game {
   }
 
   gameOver(winner) {
-    winner.wins.push(game);
-    // winner.saveWinsToStorage();
+    winner.wins++;
+    winner.saveWinsToStorage();
     this.player1.hand.length = 0;
     this.player2.hand.length = 0;
     this.centerPile.length = 0;
