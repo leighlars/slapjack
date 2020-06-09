@@ -9,11 +9,11 @@ function keyHandler(event) {
   var slapper = null;
   if (event.key === "q" && game.currentPlayer === true) {
     game.player1.playCard();
-    gameplayDOM(game.player1);
+    gameplayDOM();
   }
   if (event.key === "p" && game.currentPlayer === false) {
     game.player2.playCard();
-    gameplayDOM(game.player2);
+    gameplayDOM();
   }
   if (event.key === "f") {
     game.slapPile(game.player1);
@@ -26,7 +26,7 @@ function keyHandler(event) {
   updateDisplay(slapper);
 }
 
-function gameplayDOM(player) {
+function gameplayDOM() {
   document.querySelector("h1").innerText = "";
   changeTopCard();
 }
