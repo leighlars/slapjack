@@ -51,7 +51,10 @@ function changeTopCard() {
     topCard.classList.remove("hidden");
     topCard.style.backgroundImage = `url(${playedCard.src})`;
   }
-  game.currentPlayer ? topCard.classList.add("p2") : topCard.classList.remove("p2");
+  var opponent = game.currentPlayer ? game.player2 : game.player1;
+  if (opponent.hand.length != 0) {
+    game.currentPlayer && opponent.hand.length != 0  ? topCard.classList.add("p2") : topCard.classList.remove("p2");
+  }
 }
 
 function hideCards() {
