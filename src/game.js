@@ -64,6 +64,7 @@ class Game {
     var topCard = this.centerPile[0];
     if ((topCard.value === "jack" && winningPlayer.id === player.id) ||
         (topCard.value != "jack") && losingPlayer.id === player.id) {
+        this.header = "win";
         this.gameOver(winningPlayer);
     } else if (topCard.value === "jack" && losingPlayer.id === player.id ||
               topCard.value != "jack" && winningPlayer.id === player.id) {
@@ -73,9 +74,10 @@ class Game {
 
   gameOver(winner) {
     winner.wins.push(game);
-    winner.saveWinsToStorage();
-    this.player1.hand.length === 0;
-    this.player2.hand.length === 0;
+    // winner.saveWinsToStorage();
+    this.player1.hand.length = 0;
+    this.player2.hand.length = 0;
+    this.centerPile.length = 0;
     this.deal();
   }
 

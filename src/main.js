@@ -7,14 +7,12 @@ document.addEventListener("keydown", keyHandler);
 function keyHandler(event) {
   var slapper = null;
   if (event.key === "q" && game.currentPlayer === true) {
-    document.querySelector("h1").innerText = "";
-    changeTopCard();
     game.player1.playCard();
+    gameplayDOM(game.player1);
   }
   if (event.key === "p" && game.currentPlayer === false) {
-    document.querySelector("h1").innerText = "";
-    changeTopCard();
     game.player2.playCard();
+    gameplayDOM(game.player2);
   }
   if (event.key === "f") {
     game.slapPile(game.player1);
@@ -25,6 +23,13 @@ function keyHandler(event) {
     slapper = game.player2;
   }
   updateDisplay(slapper);
+}
+
+function gameplayDOM(player) {
+  document.querySelector("h1").innerText = "";
+  if (player.hand.length != 0) {
+    changeTopCard();
+  }
 }
 
 function updateDisplay(slapper) {
