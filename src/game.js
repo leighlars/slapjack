@@ -32,7 +32,7 @@ class Game {
     var secondCard = this.centerPile[1];
     var thirdCard = this.centerPile[2];
     if (this.player1.hand.length === 0 || this.player2.hand.length === 0) {
-      gameWinSlap(player);
+      this.gameWinSlap(player);
     } else if (topCard && "jack" === topCard.value) {
       this.winTurn(player, "slapjack");
     } else if (topCard && secondCard && topCard.value === secondCard.value) {
