@@ -8,13 +8,13 @@ function keyHandler(event) {
   var slapper = null;
   if (event.key === "q" && game.currentPlayer === true) {
     document.querySelector("h1").innerText = "";
-    game.player1.playCard();
     changeTopCard();
+    game.player1.playCard();
   }
   if (event.key === "p" && game.currentPlayer === false) {
     document.querySelector("h1").innerText = "";
-    game.player2.playCard();
     changeTopCard();
+    game.player2.playCard();
   }
   if (event.key === "f") {
     game.slapPile(game.player1);
