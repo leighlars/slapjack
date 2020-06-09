@@ -70,7 +70,7 @@ My estimated schedule is as follows:
 
 6/7: I deleted a redundant function checkEmptyHand() and added a function to display/hide the hand depending on if the hand is empty. The bugs from yesterday are still present and I aim for those to be resolved in the next day. 
 
-6/8:
+6/8: Today was all about squashing bugs. The app now works in its entirety, shy of a bug that updates the header incorrectly if the losing player slaps on a non-jack. I added localStorage, and refactored lots of code, changed the hidden class in CSS to visibility for a smooth transition. I spent a great deal of time refactoring the code and making things dynamic. The slap condition functions have multiple helper functions, as does the playCard function. 
 
 6/9: 
 
