@@ -62,13 +62,13 @@ class Game {
     var winningPlayer = this.currentPlayer ? this.player1 : this.player2;
     var losingPlayer = this.currentPlayer ? this.player2 : this.player1;
     var topCard = this.centerPile[0];
-    if ((topCard.value === "jack" && winningPlayer.id === player.id) ||
-        (topCard.value != "jack") && losingPlayer.id === player.id) {
-        this.header = "win";
-        this.gameOver(winningPlayer);
-    } else if (topCard.value === "jack" && losingPlayer.id === player.id ||
-              topCard.value != "jack" && winningPlayer.id === player.id) {
-                this.winTurn(losingPlayer);
+    var winnerSlaps = topCard.value === "jack" && winningPlayer.id === player.id;
+    var loserSlapsWrong = topCard.value != "jack" && losingPlayer.id === player.id;
+    if (winnerSlaps || loserSlapsWrong) {
+      this.header = "win";
+      this.gameOver(winningPlayer);
+    } else if (!loserSlapsWrong || !winnerSlaps) {
+      this.winTurn(losingPlayer);
     }
   }
 
