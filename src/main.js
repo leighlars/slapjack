@@ -1,19 +1,19 @@
 var game = new Game();
 
 window.onload = game.deal();
-// window.onload = player.retrieveWinsFromStorage();
+window.onload = updatePlayerWinsText(game.player1);
+window.onload = updatePlayerWinsText(game.player2);
 document.addEventListener("keydown", keyHandler);
-// document.addEventListener("keyup", updateDisplay);
 
 function keyHandler(event) {
   var slapper = null;
   if (event.key === "q" && game.currentPlayer === true) {
     game.player1.playCard();
-    changeTopCard();
+    gameplayDOM(game.player1);
   }
   if (event.key === "p" && game.currentPlayer === false) {
     game.player2.playCard();
-    changeTopCard();
+    gameplayDOM(game.player2);
   }
   if (event.key === "f") {
     game.slapPile(game.player1);
@@ -22,31 +22,39 @@ function keyHandler(event) {
   if (event.key === "j") {
     game.slapPile(game.player2);
     slapper = game.player2;
-
   }
   updateDisplay(slapper);
+  console.log(game.currentPlayer);
+}
+
+function gameplayDOM(player) {
+  document.querySelector("h1").innerText = "";
+  changeTopCard();
 }
 
 function updateDisplay(slapper) {
+  hideCards();
   if (slapper) {
     var opponent = slapper.id === 1 ? game.player2 : game.player1;
     changeHeader(game.header, slapper);
-    hideCards();
     var winner = slapper.hand.length === 52 ? slapper : opponent;
+    if (game.header === "win") {
+      updatePlayerWinsText(winner);
+    }
   }
-  // if (game.header === "win") {
-//     updatePlayerWinsText(winner);
-//     setTimeout(changeHeader, 500);
-//     setTimeout(game.resetGame, 500);
-//   }
 }
 
 function changeTopCard() {
-  var playedCard = game.centerPile[game.centerPile.length - 1];
   var topCard = document.querySelector(".center-pile");
-  topCard.classList.remove("hidden");
-  topCard.style.backgroundImage = `url(${playedCard.src})`;
-  game.currentPlayer ? topCard.classList.add("p2") : topCard.classList.remove("p2");
+  if (game.centerPile.length > 0) {
+    var playedCard = game.centerPile[0];
+    topCard.classList.remove("hidden");
+    topCard.style.backgroundImage = `url(${playedCard.src})`;
+  }
+  var opponent = game.currentPlayer ? game.player2 : game.player1;
+  if (opponent.hand.length != 0) {
+    game.currentPlayer && opponent.hand.length != 0  ? topCard.classList.add("p2") : topCard.classList.remove("p2");
+  }
 }
 
 function hideCards() {
@@ -65,7 +73,8 @@ function hideCards() {
 }
 
 function changeHeader(condition, slapper) {
-  var header = document.querySelector("header");
+  var header = document.querySelector("h1");
+  header.classList.add("gameplay");
   if (condition === "win") {
     header.innerText = `Player ${slapper.id} wins!`;
     updatePlayerWinsText(slapper);
@@ -83,5 +92,5 @@ function changeHeader(condition, slapper) {
 
 function updatePlayerWinsText(winningPlayer) {
   var playerWins = document.querySelector(`.p${winningPlayer.id}-text`);
-  playerWins.innerText = `${winningPlayer.wins.length} wins`;
+  playerWins.innerText = `${winningPlayer.wins} wins`;
 }
