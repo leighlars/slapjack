@@ -79,7 +79,9 @@ My estimated schedule is as follows:
 ## Gameplay Video
 
 <p align="center">Video of Gameplay </br>
-  <iframe width="840" height="473" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+  
+<iframe width="560" height="315" src="https://www.youtube.com/embed/A_Xjkq1bZik" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 </p>
 
 ## Reflection
