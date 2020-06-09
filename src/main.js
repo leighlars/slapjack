@@ -74,9 +74,8 @@ function hideCards() {
 function changeHeader(condition, slapper) {
   var header = document.querySelector("h1");
   header.classList.add("gameplay");
-  if (condition === "win") {
-    header.innerText = `Player ${slapper.id} wins!`;
-    // if loser slaps, the winner should win
+  if (condition === "1" || condition === "2") {
+    header.innerText = `Player ${condition} wins!`;
     updatePlayerWinsText(slapper);
   } else if (condition === "slapjack") {
     header.innerText = `SLAPJACK! Player ${slapper.id} takes the pile!`;

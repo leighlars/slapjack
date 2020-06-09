@@ -65,9 +65,8 @@ class Game {
     var winnerSlaps = topCard.value === "jack" && winningPlayer.id === player.id;
     var loserSlapsWrong = topCard.value != "jack" && losingPlayer.id === player.id;
     if (winnerSlaps || loserSlapsWrong) {
-      this.header = "win";
+      this.header = `${winningPlayer.id}`;
       this.gameOver(winningPlayer);
-      // if loser slaps, the winner should win
     } else if (!loserSlapsWrong || !winnerSlaps) {
       this.winTurn(losingPlayer);
     }
