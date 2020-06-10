@@ -76,18 +76,16 @@ My estimated schedule is as follows:
 
 6/9: I increased the size of the font of the gameplay header text, resolved the last bug, and refactored code. Game is fully functional and localStorage is implemented.
 
-## Gameplay Video
+## Gameplay Gifs
 
-<p align="center">Gifs of Gameplay</p> </br>
-  
+<p align="center">General Gameplay</p>
 ![gif of general gameplay](/readme-images/gameplay.gif)
-*Gif of general gameplay* 
 
+<p align="center">Player Win & Auto-restart</p>
 ![gif of win and autorestart](/readme-images/winautorestart.gif)
-*Gif of win and autorestart* 
 
-![gif of losing player redemption](/readme-images/lossredemption.gif)
-*Gif of losing player redemption* 
+<p align="center">Losing Player Redemption</p>
+![gif of losing player redemption](/readme-images/lossredemption.gif) 
 
 ## Reflection
 
