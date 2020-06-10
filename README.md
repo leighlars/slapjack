@@ -51,7 +51,7 @@ My estimated schedule is as follows:
 - A Jack is slapped on top of the central pile, 
 - A Double or a pair (two cards of the same number - such as two Aces, or two Fives, or two Queens) is slapped on top of central pile, 
 - A Sandwich (two cards of the same number - such as two Aces, or two Fives, or two Queens, separated by a different card in the middle) is on top of the central pile.
-- Otherwise, the player who slapped loses the card on top of their hand and it is added to the bottom of their opponent’s hand.
+- Badslap conditions: the player who slapped loses the card on top of their hand and it is added to the bottom of their opponent’s hand if the player slaps on a non-jack or is the second person to slap a valid card.
 - **If one player loses all their cards (sudden death mode):**
 - The player with cards left continues to deal from their hand into the central pile (they are now allowed to deal multiple times in a row!). If the player with cards left deals all their cards into the center without revealing a Jack, the central pile returns to that player’s hand, is shuffled, and the player must continue to deal until a Jack is revealed
 - Sandwiches, doubles, and badslap conditions are no longer in effect. 
