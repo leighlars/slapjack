@@ -78,6 +78,10 @@ My estimated schedule is as follows:
 
 ## Winning Gifs
 
+<p align="center"> Gameplay General </br>
+  <img width="460" height="300" src="https://media.giphy.com/media/VF4OILrPeURHFhZUTg/giphy.gif" alt="Gif of win and auto-start">
+</p>
+
 <p align="center"> Losing Player Redemption </br>
   <img width="460" height="300" src="https://media.giphy.com/media/LjzUk0S8xHy5Nb8bTp/source.gif" alt="Gif of losing player redemption">
 </p>
