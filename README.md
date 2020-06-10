@@ -76,9 +76,7 @@ My estimated schedule is as follows:
 
 6/9: I increased the size of the font of the gameplay header text, resolved the last bug, and refactored code. Game is fully functional and localStorage is implemented.
 
-## Gameplay Gifs
-
-
+## Winning Gifs
 
 <p align="center"> Player Win and Auto-restart </br>
   <img width="460" height="300" src="https://media.giphy.com/media/LjzUk0S8xHy5Nb8bTp/source.gif" alt="Gif of win and auto-start">
@@ -88,6 +86,8 @@ My estimated schedule is as follows:
   <img width="460" height="300" src="https://media.giphy.com/media/RN8QqYRyiAKGhEfpd4/source.gif" alt="Gif of losing player redemption">
 </p>
 
+
+*More gifs can be found in the readme-images file*
 
 ## Reflection
 
