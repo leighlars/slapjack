@@ -87,7 +87,7 @@ My estimated schedule is as follows:
 </p>
 
 
-More gifs can be found in the file [readme-images](https://github.com/leighlars/slapjack/tree/master/readme-images).
+More gifs can be found in the folder [readme-images](https://github.com/leighlars/slapjack/tree/master/readme-images).
 
 ## Reflection
 
