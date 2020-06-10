@@ -78,14 +78,15 @@ My estimated schedule is as follows:
 
 ## Gameplay Gifs
 
-General Gameplay
-![gif of general gameplay](/readme-images/gameplay.gif)
+General Gameplay</br>
+![gif of general gameplay](/readme-images/generalgameplay.gif)
 
-Player Win & Auto-restart
-![gif of win and autorestart](/readme-images/winautorestart.gif)
+Player Win & Auto-restart</br>
+![gif of win and autorestart](/readme-images/winautostart.gif)
 
-Losing Player Redemption
-![gif of losing player redemption](/readme-images/lossredemption.gif) 
+Losing Player Redemption</br>
+![gif of losing player redemption](/readme-images/loserredemption.gif) 
+
 
 ## Reflection
 
