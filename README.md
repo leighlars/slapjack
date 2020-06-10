@@ -78,18 +78,16 @@ My estimated schedule is as follows:
 
 ## Gameplay Video
 
-<p align="center">Gifs of Gameplay </br>
+<p align="center">Gifs of Gameplay</p> </br>
   
 ![gif of general gameplay](/readme-images/gameplay.gif)
-*Gif of general gameplay*
+*Gif of general gameplay* 
 
 ![gif of win and autorestart](/readme-images/winautorestart.gif)
-*gif of win and autorestart*
+*Gif of win and autorestart* 
 
 ![gif of losing player redemption](/readme-images/lossredemption.gif)
-*Gif of losing player redemption*
-
-</p>
+*Gif of losing player redemption* 
 
 ## Reflection
 
