@@ -74,13 +74,20 @@ My estimated schedule is as follows:
 
 6/8: Today was all about squashing bugs. The app now works in its entirety, shy of a bug that updates the header incorrectly if the losing player slaps on a non-jack. I added localStorage, and refactored lots of code, changed the hidden class in CSS to visibility for a smooth transition. I spent a great deal of time refactoring the code and making things dynamic. The slap condition functions have multiple helper functions, as does the playCard function. 
 
-6/9: 
+6/9: I increased the size of the font of the gameplay header text, resolved the last bug, and refactored code. Game is fully functional and localStorage is implemented.
 
 ## Gameplay Video
 
-<p align="center">Video of Gameplay </br>
+<p align="center">Gifs of Gameplay </br>
   
-<iframe width="560" height="315" src="https://www.youtube.com/embed/A_Xjkq1bZik" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+![gif of general gameplay](/readme-images/gameplay.gif)
+*Gif of general gameplay*
+
+![gif of win and autorestart](/readme-images/winautorestart.gif)
+*gif of win and autorestart*
+
+![gif of losing player redemption](/readme-images/lossredemption.gif)
+*Gif of losing player redemption*
 
 </p>
 
